@@ -1,0 +1,1508 @@
+[
+    {
+        "md5sum": "b9c4d4046e042e394d5316cd7eaf09b9",
+        "file_name": "GTEX-1192X-1026-SM-5H12P.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/b3af51d2-b2af-41d1-bc61-dfd66184be7e",
+        "file_size": 5076009226
+    },
+    {
+        "md5sum": "7fef3dc25c80db682007909144935a44",
+        "file_name": "GTEX-11DXY-0526-SM-5EGGQ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ce3ac02e-f571-4a36-a6b1-0c6181de0fdd",
+        "file_size": 5600534804
+    },
+    {
+        "md5sum": "2aa5fa5c794ecc60b5181615ad7b389e",
+        "file_name": "GTEX-11DXZ-0126-SM-5EGGY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ffc74704-9d20-480f-9ee9-27cd2a7dcdd8",
+        "file_size": 4784186327
+    },
+    {
+        "md5sum": "c1f1e8a48be15b6ae1b741e60cb25d8d",
+        "file_name": "GTEX-11EQ9-0526-SM-5A5JZ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e1d36555-391a-44c7-befc-263a383173e1",
+        "file_size": 6739180165
+    },
+    {
+        "md5sum": "563e7c14c0c222cfb02c26d341d31610",
+        "file_name": "GTEX-11GSP-0626-SM-5986T.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6d312752-5bef-49aa-8cca-c462cd034757",
+        "file_size": 5708784154
+    },
+    {
+        "md5sum": "505c550bc6d8b5641825598aa2861eb1",
+        "file_name": "GTEX-11NUK-1226-SM-5P9GM.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/57c7829d-5ae9-482e-be87-7105be6f8493",
+        "file_size": 7829236950
+    },
+    {
+        "md5sum": "04ed468676539128fbc3a9d4e71bc9f8",
+        "file_name": "GTEX-11NV4-1326-SM-5HL6V.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/5fc1d6c6-5bf3-4163-8cf2-6ede61f52563",
+        "file_size": 7696440756
+    },
+    {
+        "md5sum": "3d65d19602b563a541d468a44014ab7f",
+        "file_name": "GTEX-11OF3-0726-SM-5BC4Z.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b81a5c9c-643c-41ae-adc6-837452ca5180",
+        "file_size": 5374849508
+    },
+    {
+        "md5sum": "4fa625806a3dede073f8acc7819532ba",
+        "file_name": "GTEX-11TT1-1726-SM-5EQLJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c2715ae8-84a4-4233-b23b-6c99108ba3e7",
+        "file_size": 4574375204
+    },
+    {
+        "md5sum": "5cbc3707608d048a1fa047c691dc9f2a",
+        "file_name": "GTEX-11TUW-1726-SM-5BC5C.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3b185c04-ac01-4630-8bc9-aec02761494d",
+        "file_size": 6146168553
+    },
+    {
+        "md5sum": "ee6adec8253daa93122d468906808629",
+        "file_name": "GTEX-11UD2-1626-SM-5EQM3.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/57480762-6f85-4855-b55f-baeaa0813e1a",
+        "file_size": 5632102972
+    },
+    {
+        "md5sum": "1fe66fc39e356f8b9ffffd8c00273efe",
+        "file_name": "GTEX-11WQC-0726-SM-5EQMR.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ff91c457-a697-4c63-83b1-2003aba6afc2",
+        "file_size": 5583844001
+    },
+    {
+        "md5sum": "cfc96d210243becff2629723e158eac1",
+        "file_name": "GTEX-11ZTS-1426-SM-5EQMM.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d6286629-0462-4ebd-b6ff-e6fd8f57a305",
+        "file_size": 9464768993
+    },
+    {
+        "md5sum": "c75d235ae0e63e67c63224c61cf21996",
+        "file_name": "GTEX-11ZUS-2526-SM-59872.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c62ac1d0-2ff8-416e-a9c6-694f412eb505",
+        "file_size": 5924931400
+    },
+    {
+        "md5sum": "49fb9ebedcf68507484b6eafae3e741e",
+        "file_name": "GTEX-11ZVC-0726-SM-5FQT9.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3e834a56-35a1-4987-b2d0-d06554d0608d",
+        "file_size": 6420975633
+    },
+    {
+        "md5sum": "bee25588198a85f3a52b69eb74b34a44",
+        "file_name": "GTEX-1212Z-0226-SM-59HLF.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a2005eac-eb4c-4ca0-a573-ca341f31ae32",
+        "file_size": 5185392609
+    },
+    {
+        "md5sum": "ee055b0b0c5f842cb9216c2d954bac2a",
+        "file_name": "GTEX-12696-0826-SM-5EGGE.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/bf0f0035-be57-4832-bf9c-ad144070b0cf",
+        "file_size": 4847297380
+    },
+    {
+        "md5sum": "52caf8dc9234dcfa63a1d40e01945ca9",
+        "file_name": "GTEX-1269C-0626-SM-5FQSS.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8e090c7b-a8a8-492b-9193-0e0eb41c0539",
+        "file_size": 5883347479
+    },
+    {
+        "md5sum": "1cd803d8e296d8769938062c35b64455",
+        "file_name": "GTEX-12KS4-1326-SM-5LUB3.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d397027c-d3a1-448b-9ba8-7fefd72e71a8",
+        "file_size": 4836406950
+    },
+    {
+        "md5sum": "de1b9fd667632dfb447c7f588fd3abd0",
+        "file_name": "GTEX-12WSD-1426-SM-5GCN9.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3962d0db-e13b-431e-a1ce-4617933379f0",
+        "file_size": 5221959505
+    },
+    {
+        "md5sum": "1a2b9877c4fd09b6862fbe6a88396286",
+        "file_name": "GTEX-12WSG-0626-SM-5FQTQ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c3d608fe-7f07-47de-bf73-92b09b4cf388",
+        "file_size": 6026990428
+    },
+    {
+        "md5sum": "d706b5b71e7b60fd160cc9f19fc82647",
+        "file_name": "GTEX-12WSI-0226-SM-5GCNA.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/37678eb3-b256-4a81-a65e-dde9b14561c7",
+        "file_size": 3858122450
+    },
+    {
+        "md5sum": "f8d83c3be08d4366467976dcab1db925",
+        "file_name": "GTEX-12WSL-0226-SM-5CVMJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/94709f6c-77bd-4ae6-aec6-41e4870b0ffe",
+        "file_size": 5866905693
+    },
+    {
+        "md5sum": "12a8fe96ddd117450f05d1f0e1609bd9",
+        "file_name": "GTEX-12WSM-0726-SM-5GCOW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/64ff2511-6940-4a91-b12a-0e16d860fb69",
+        "file_size": 5653756139
+    },
+    {
+        "md5sum": "5e4169db367c7ce35888ab519a123fce",
+        "file_name": "GTEX-12ZZZ-1326-SM-59HKW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0b569760-e58a-49db-9b67-156c11076841",
+        "file_size": 6966490245
+    },
+    {
+        "md5sum": "b7b06b9eb5688ce7b8e73ef390cb8c6b",
+        "file_name": "GTEX-13112-1426-SM-5EGH8.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/11145dd8-3fba-47be-a79b-ec60bb74c3ec",
+        "file_size": 5050636110
+    },
+    {
+        "md5sum": "5ea5d52951c54c88c05e8366373b9c3b",
+        "file_name": "GTEX-13113-1326-SM-5GCOI.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/9a059293-5789-4a5f-be21-be206387b086",
+        "file_size": 4659000576
+    },
+    {
+        "md5sum": "9c4c15a3f36d51c60ef0ea4b5b0deb7e",
+        "file_name": "GTEX-131XE-0326-SM-5LZVO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1ddb44fe-b916-4aa1-8eed-7bdb1821a053",
+        "file_size": 4417972639
+    },
+    {
+        "md5sum": "3186f8677bde36aaddaec15caf77bae4",
+        "file_name": "GTEX-131XH-0626-SM-5LZWH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/93b35b68-b283-4c0b-b332-278922d0971e",
+        "file_size": 4649483931
+    },
+    {
+        "md5sum": "e006745a6f6f3c0d0ece59a99aaa4a57",
+        "file_name": "GTEX-131YS-1626-SM-5HL6C.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/daa126bc-1f53-4d77-987d-71940582d130",
+        "file_size": 4707325853
+    },
+    {
+        "md5sum": "9a5c044811eb4a7b4d9e92c47dd761a3",
+        "file_name": "GTEX-132AR-0426-SM-5IFH8.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/65871f33-7312-4697-bfdb-89da6eb3e92b",
+        "file_size": 5567183215
+    },
+    {
+        "md5sum": "f5b7bffa671be94ab12f5d1c71433bbd",
+        "file_name": "GTEX-132NY-0926-SM-5P9G3.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d8570255-b47b-4b48-902b-427f6d2489f0",
+        "file_size": 9919944453
+    },
+    {
+        "md5sum": "0a925fc7d2e4a9504d25db4a85754a9c",
+        "file_name": "GTEX-1399R-1226-SM-5P9GF.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0b0f817a-31da-41fb-9029-25d5fc2a5a36",
+        "file_size": 9903555968
+    },
+    {
+        "md5sum": "d904465d321370ba0500da36530bfa6b",
+        "file_name": "GTEX-1399T-0826-SM-5IFES.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/81b80005-743d-4e58-92e7-a36f66d2ef5c",
+        "file_size": 6152160556
+    },
+    {
+        "md5sum": "439a163383ee9eeba3dc186d2329a274",
+        "file_name": "GTEX-139TS-1426-SM-5IFJD.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/5a9a7e0a-c75c-4e12-86b5-88a8e0ec1fa3",
+        "file_size": 6609678364
+    },
+    {
+        "md5sum": "96aff70febdf7ced055200640cbe52da",
+        "file_name": "GTEX-139TU-0826-SM-5IJFG.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/62392c31-a6f9-493b-9bcc-c95af8d43ab8",
+        "file_size": 6323380690
+    },
+    {
+        "md5sum": "6d41b2c0af5667ebfccf94092dbcd2a0",
+        "file_name": "GTEX-139UC-1426-SM-5IJGH.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/ec2c1d1c-e8b6-4951-b631-e9d61e978027",
+        "file_size": 7324026571
+    },
+    {
+        "md5sum": "5fcc821a800ff2750b738aef97fd3232",
+        "file_name": "GTEX-139YR-0226-SM-5IFEM.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/21d32e2c-b557-4991-a098-f6c427fbbeeb",
+        "file_size": 6348361978
+    },
+    {
+        "md5sum": "fa63f56a9d0fe84573496727cd2871e0",
+        "file_name": "GTEX-13FLV-0326-SM-5N9DJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/f87cf845-856c-4cfe-9287-60b69791c539",
+        "file_size": 10282016454
+    },
+    {
+        "md5sum": "138443ee093d66d005615b59c828bf04",
+        "file_name": "GTEX-13FTW-1126-SM-5J2NV.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/091b1471-c556-4944-ab7e-79b24ee76667",
+        "file_size": 7103967659
+    },
+    {
+        "md5sum": "47f2a3e25e6bda84e61ec94247329822",
+        "file_name": "GTEX-13FTZ-0726-SM-5IFFY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/58dc29df-a007-4ff0-8045-0881429f1d64",
+        "file_size": 6265774292
+    },
+    {
+        "md5sum": "3753d1b4b6d960bcf4512e2f65672659",
+        "file_name": "GTEX-13N11-0926-SM-5IJG2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/69fa956c-1174-4af6-8a39-554835fd4a2d",
+        "file_size": 7931958507
+    },
+    {
+        "md5sum": "bc10110adde1235b34d91416703e3314",
+        "file_name": "GTEX-13N2G-0926-SM-5IFGJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7827fd76-ca43-49b2-a8a7-d323d646ffc5",
+        "file_size": 5091029494
+    },
+    {
+        "md5sum": "6a6120dbb87abb54ef57f4ba0aa0c482",
+        "file_name": "GTEX-13NYB-1026-SM-5IFH3.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a57909af-49b5-4ba6-8059-eb3e6bcaddf9",
+        "file_size": 5340459716
+    },
+    {
+        "md5sum": "3d7fb1f986d84486a1347872a0d5a343",
+        "file_name": "GTEX-13NZ9-1326-SM-5MR3V.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6518be29-ef08-4a1e-bf93-5c9da2b5fa31",
+        "file_size": 6151196442
+    },
+    {
+        "md5sum": "95704109d2d703669ba6b11d081ee98c",
+        "file_name": "GTEX-13NZB-0626-SM-5IFH6.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a24c2785-c673-4a17-b891-ad61466601ee",
+        "file_size": 5667426285
+    },
+    {
+        "md5sum": "92259fccbff205becbc5ce548ead0b81",
+        "file_name": "GTEX-13O1R-2026-SM-5KM3N.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/13803a43-f6c2-47c4-b974-ecdd26152d02",
+        "file_size": 6286320280
+    },
+    {
+        "md5sum": "a80fc20cbb25998df67d8901fcc5d249",
+        "file_name": "GTEX-13O3O-1826-SM-5IFGW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/4c34e8b7-fcb2-4878-b841-ee584057131a",
+        "file_size": 5534306177
+    },
+    {
+        "md5sum": "632452ab7fe2bdc4a3615ef0904fcee2",
+        "file_name": "GTEX-13OVJ-1026-SM-5IFGI.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/f4ce5523-ba01-4531-9fc7-9f1ca81caead",
+        "file_size": 4724805739
+    },
+    {
+        "md5sum": "384e58ff97356be9f6c5c8e78ecd2912",
+        "file_name": "GTEX-13OW6-2626-SM-5IFF2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/10edfcc0-5bd2-4d3e-ad1a-cdf0504b956e",
+        "file_size": 6421793982
+    },
+    {
+        "md5sum": "7cd811832623abbfed9d4bac203fee3f",
+        "file_name": "GTEX-13PVQ-1526-SM-5IFEQ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e1f3cbe9-cccf-4cfd-a468-6500b0e18574",
+        "file_size": 5295302902
+    },
+    {
+        "md5sum": "99930774ff161cd603fa473174513846",
+        "file_name": "GTEX-13PVR-0126-SM-5S2PY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3a77866a-18db-4cc4-b3d1-56cd5bf1833a",
+        "file_size": 3282476745
+    },
+    {
+        "md5sum": "53e9ef6d7fbe98ef475b4e9ba3465741",
+        "file_name": "GTEX-13QJC-0726-SM-5RQJK.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/993c4d22-7231-4017-a6a2-9be35031e9f2",
+        "file_size": 4402321599
+    },
+    {
+        "md5sum": "010f30edd9e520cd52d3c2f4a3599a59",
+        "file_name": "GTEX-13SLX-1226-SM-5S2Q6.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d3284263-9909-473e-8fae-d68423164dcd",
+        "file_size": 3524242507
+    },
+    {
+        "md5sum": "861be7c61ac75d306c5eb80718d7b9e7",
+        "file_name": "GTEX-13VXU-0926-SM-5IFFH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2e739073-448b-4320-9866-2f4f2c76ab76",
+        "file_size": 4615908275
+    },
+    {
+        "md5sum": "a31b783de6e08d80f5468b5203606204",
+        "file_name": "GTEX-13X6J-1826-SM-5TDCT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/adb97888-bd54-4be0-b8db-31efbbe7fe9b",
+        "file_size": 6571923909
+    },
+    {
+        "md5sum": "d47de274812ddf762d1b6d1256e31c24",
+        "file_name": "GTEX-144GL-1426-SM-79OMA.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8ac95f66-777e-464d-b294-f8c2d2f28662",
+        "file_size": 4574063291
+    },
+    {
+        "md5sum": "788196205010d2038441a152e4adf871",
+        "file_name": "GTEX-144GM-1326-SM-5LU5E.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2a9d2cdb-3747-4058-8e42-b06dc77075ac",
+        "file_size": 5974370449
+    },
+    {
+        "md5sum": "d6addd6ebc330becac2fc834212921e8",
+        "file_name": "GTEX-145LU-1326-SM-5LU9N.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b21c7c16-1010-4d5a-a80a-f50b79587b03",
+        "file_size": 5139042161
+    },
+    {
+        "md5sum": "bf9c4366547eaab9f6b4844c019eb606",
+        "file_name": "GTEX-145MF-0826-SM-5QGQA.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ca821a31-a96d-473f-b6b0-4e9a93cf4c22",
+        "file_size": 3751251856
+    },
+    {
+        "md5sum": "5dac483a4205158b4affcba95b2f894b",
+        "file_name": "GTEX-145MO-2326-SM-5NQ9K.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/89973533-3297-40ba-91fb-5ab7527bfb4a",
+        "file_size": 7698679373
+    },
+    {
+        "md5sum": "2f1401457609679f0cabefd65caa45de",
+        "file_name": "GTEX-146FH-1526-SM-5NQBU.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e8ec3528-eeae-4fc1-a09d-70c9da75a178",
+        "file_size": 6714554763
+    },
+    {
+        "md5sum": "5554eaa5a6fa4fdb7a1c6ee5ce09a734",
+        "file_name": "GTEX-14753-1626-SM-5NQ9L.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/bc530875-c354-4389-9220-291552897196",
+        "file_size": 7232218382
+    },
+    {
+        "md5sum": "33abea53a7ac955ccf32ff0db4ce6b5c",
+        "file_name": "GTEX-147F4-1426-SM-5LUA8.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2b959af7-b7b2-4868-9f84-2b4044fe98ca",
+        "file_size": 4191319022
+    },
+    {
+        "md5sum": "317f77d405cb90c23d1fbf79c01fd8d7",
+        "file_name": "GTEX-147GR-1326-SM-7IGLB.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/41d5b99b-3746-498d-acab-4841910fe6b9",
+        "file_size": 2905367773
+    },
+    {
+        "md5sum": "a32e2f0b1f35bdca9869c04295c42c51",
+        "file_name": "GTEX-147JS-1126-SM-5RQIW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/9a081a0b-3a3a-46b6-8323-97ce467ac6e1",
+        "file_size": 4088189105
+    },
+    {
+        "md5sum": "daf5de04c30dc0a7764840177f3941dc",
+        "file_name": "GTEX-148VI-0626-SM-5TDDH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b7a2e3d7-2c63-421d-aa62-552464397004",
+        "file_size": 5743891907
+    },
+    {
+        "md5sum": "2421ae666a9c717bae225b93aa115ec5",
+        "file_name": "GTEX-1497J-0726-SM-5Q5D1.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/54e5facc-5cdd-4f4c-b034-977486864451",
+        "file_size": 11607259785
+    },
+    {
+        "md5sum": "bdf2fda3f3b869c1e07efedddb5e2bc9",
+        "file_name": "GTEX-14A5I-1726-SM-5QGQ5.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/050180eb-f28f-4375-87c8-954ef17ff6ed",
+        "file_size": 4324091804
+    },
+    {
+        "md5sum": "16464a497b23f84007c79fc7162a90e5",
+        "file_name": "GTEX-14AS3-0126-SM-5Q5F4.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a0512f4a-c068-4cea-ba7c-c0fa90d9eed7",
+        "file_size": 5593349348
+    },
+    {
+        "md5sum": "f0f8450bccad81f22e9a271d5795b925",
+        "file_name": "GTEX-14BIL-1326-SM-79OMR.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/bf14bb75-a4c3-4a8b-9dd3-06b4107973bb",
+        "file_size": 4432777332
+    },
+    {
+        "md5sum": "43d4ef3a4efeb98dd9783c79e6340469",
+        "file_name": "GTEX-14C38-1526-SM-5RQJ7.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8227462f-74bc-447b-89a6-ad0ff29aa1d0",
+        "file_size": 5021087831
+    },
+    {
+        "md5sum": "3f76ab424bcddbacc8571afe21a03fe1",
+        "file_name": "GTEX-14DAQ-1726-SM-5S2R2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8b3452e3-62ff-42e1-9f0e-853cedfdd5b6",
+        "file_size": 3475022003
+    },
+    {
+        "md5sum": "2dc23c81f7fd457296b131eaaa8fd886",
+        "file_name": "GTEX-14E1K-0326-SM-5S2PE.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2ea24b71-869d-4453-8d74-b66da5d1438c",
+        "file_size": 3850470785
+    },
+    {
+        "md5sum": "c071355d77d777f4b8aa9faa183efc17",
+        "file_name": "GTEX-14E7W-1526-SM-6871X.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/25817041-df4e-4fe3-bd4f-13ae179b5a7f",
+        "file_size": 6537288633
+    },
+    {
+        "md5sum": "81f881686a67c3541a02f35ea9a2d2b3",
+        "file_name": "GTEX-14JG1-1626-SM-664NH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/57cd643c-05d2-4ce9-a77e-dec989a5274f",
+        "file_size": 6446184397
+    },
+    {
+        "md5sum": "54ac507b7e741544ac8b739a0b3d8abc",
+        "file_name": "GTEX-14PHX-0526-SM-664NW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c01fcd45-ad3d-4ecc-9e1a-628c488afc7d",
+        "file_size": 6726208015
+    },
+    {
+        "md5sum": "528f079f42008ab1f1032770038bd5fe",
+        "file_name": "GTEX-14PJO-1726-SM-68719.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/89047114-e995-4050-b57c-fa1bb7d2018f",
+        "file_size": 5013459486
+    },
+    {
+        "md5sum": "36745ded1876ca75cc948292852955db",
+        "file_name": "GTEX-14XAO-0226-SM-68728.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/76d5fc36-8255-416e-a273-7ef0d65a0e7f",
+        "file_size": 7360082534
+    },
+    {
+        "md5sum": "5173f4b9b780e3bda48de6fe01a21033",
+        "file_name": "GTEX-15CHS-1426-SM-6871W.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/ec8898f1-30d0-4148-875a-7a03d7b105fc",
+        "file_size": 6455642543
+    },
+    {
+        "md5sum": "61a8a1a8f6e2990785282d59b8edddd9",
+        "file_name": "GTEX-15DYW-1326-SM-6LPIV.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/678c6e9a-6275-4f9c-ad30-6767b27ea0d2",
+        "file_size": 4978409360
+    },
+    {
+        "md5sum": "25e988d3cba2ba28844471088cc95c1c",
+        "file_name": "GTEX-15ER7-1826-SM-6LLI7.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1426169b-bb82-419c-81a5-35246ba94664",
+        "file_size": 6562560759
+    },
+    {
+        "md5sum": "9eb307349bc6a042b7be542cc9085889",
+        "file_name": "GTEX-15RJ7-2026-SM-6LPJ4.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8d5666b2-eb4b-4875-a2ec-966d9d2afeb1",
+        "file_size": 5323957319
+    },
+    {
+        "md5sum": "9c4a188632c3f7f4db4b47999ded1240",
+        "file_name": "GTEX-15RJE-1126-SM-6LPI5.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/feabb7b6-f4d7-4af0-8a83-2d635895ab9e",
+        "file_size": 5024968919
+    },
+    {
+        "md5sum": "79e35560df46d3ee046de79b1cecf593",
+        "file_name": "GTEX-15SHU-1826-SM-7KUKS.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/88387a00-98d2-4001-b3f0-b847a32bd81e",
+        "file_size": 2606810312
+    },
+    {
+        "md5sum": "7ff05469c5fb7f701a27888fe7422ffb",
+        "file_name": "GTEX-15SZO-1226-SM-6LPIP.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/24c3e0f6-0393-4117-8786-f7742c7ff8c7",
+        "file_size": 4692652777
+    },
+    {
+        "md5sum": "0bc5ea0dfce3f8d183336fa31e2104ee",
+        "file_name": "GTEX-17EVP-1026-SM-7IGOZ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b10c4355-c4cd-4bd6-9a33-7d93b9cf9c22",
+        "file_size": 2407371515
+    },
+    {
+        "md5sum": "c02e9a929c74d43ac1b911a0610edaf2",
+        "file_name": "GTEX-17F96-1226-SM-79OK2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0780f4ee-76ca-4a5b-b2ce-7f0d70586583",
+        "file_size": 5732704598
+    },
+    {
+        "md5sum": "01d6457f3c4b378c5ca80161ac794958",
+        "file_name": "GTEX-17HGU-1826-SM-7IGQM.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2587ee4a-f418-471b-a176-1de6cdb5ed0f",
+        "file_size": 2979002819
+    },
+    {
+        "md5sum": "12defdd0594920dce8ee6c2b24591960",
+        "file_name": "GTEX-17HHE-0126-SM-79398.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/fc70f3d0-f514-4748-833b-4d14839293c7",
+        "file_size": 3949536123
+    },
+    {
+        "md5sum": "fdf24ce4a42f6bc595d17954c4ebcd09",
+        "file_name": "GTEX-17HII-1026-SM-7IGLY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/9bd54ca1-dd8a-4f6d-9933-e6130b7c6d83",
+        "file_size": 4269671426
+    },
+    {
+        "md5sum": "6c577ae14512fb9b684027460569d917",
+        "file_name": "GTEX-17MF6-1126-SM-7DUFS.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/5234045e-d7ae-45e7-ad66-9c49ba9004e6",
+        "file_size": 6899072570
+    },
+    {
+        "md5sum": "6be4fe8bb545da10561fa9f332cdb6a3",
+        "file_name": "GTEX-18465-1626-SM-7LG6N.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/86a38e99-65d7-4999-b7f2-bfb2f650cb39",
+        "file_size": 4821074542
+    },
+    {
+        "md5sum": "73582555cb89b13e4cf74dee49d9f08d",
+        "file_name": "GTEX-18A66-2026-SM-7189C.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3d6a534d-1867-413e-9b16-90b1f70d6fc3",
+        "file_size": 8566632877
+    },
+    {
+        "md5sum": "66731ead3ecc07c88353ed60faa31c4a",
+        "file_name": "GTEX-18A6Q-2026-SM-718AQ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c8a0b7d8-a7a0-43cd-b4c7-3acb2590e2c7",
+        "file_size": 7168891024
+    },
+    {
+        "md5sum": "b74dc811c0d533b5b508390abe569d22",
+        "file_name": "GTEX-18A7A-1526-SM-72D69.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/df74bb61-736b-4bfb-a648-2fc1cf755bf3",
+        "file_size": 5717094614
+    },
+    {
+        "md5sum": "426520b51b4834a375c7788e834cc64c",
+        "file_name": "GTEX-18D9B-1526-SM-7KFRK.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1ab20408-a9dd-4103-b1ef-28ad496ca544",
+        "file_size": 4518629726
+    },
+    {
+        "md5sum": "de3b2fc9ade7a191e26358adb1435c1e",
+        "file_name": "GTEX-1A32A-0826-SM-72D5C.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/9e2e41f6-3dc6-4206-ae15-23a15127177c",
+        "file_size": 5034343822
+    },
+    {
+        "md5sum": "a38db4f644fb5922a27d160cd4500b0b",
+        "file_name": "GTEX-1A8FM-1226-SM-7IGMD.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/80b00744-b192-4c21-b09d-16089cf11c75",
+        "file_size": 4746195422
+    },
+    {
+        "md5sum": "f7a3e7129c93e82e3adcbd957569cb4e",
+        "file_name": "GTEX-1A8G7-1126-SM-731ED.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/895221a0-df5d-45fd-820a-20b21597d9e7",
+        "file_size": 4825466727
+    },
+    {
+        "md5sum": "cd9b2674c0bbf9247a2c4761043fd095",
+        "file_name": "GTEX-1AMFI-0826-SM-731DV.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c0a19e8f-5866-486d-a975-06195df086fe",
+        "file_size": 4833849700
+    },
+    {
+        "md5sum": "6c71183a1fa745291faecb969c820330",
+        "file_name": "GTEX-1AX8Y-0726-SM-731CX.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/1c91077a-85aa-426f-af0e-4cf9b969f67a",
+        "file_size": 4780870680
+    },
+    {
+        "md5sum": "1e5b89679b0d01983b73c0f406121362",
+        "file_name": "GTEX-1AX8Z-1026-SM-7189R.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/eca9f045-383f-4cca-89ad-4bb3aafab45a",
+        "file_size": 7369439883
+    },
+    {
+        "md5sum": "fdf7579d963c7574a9991f541e52d38c",
+        "file_name": "GTEX-1AX9I-1626-SM-72D5D.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ed5039b9-a701-4104-933c-76d5fd55b8d7",
+        "file_size": 5597346536
+    },
+    {
+        "md5sum": "346e3a9fbc7fd6c03a0f5b43819ed7ee",
+        "file_name": "GTEX-1B8L1-0726-SM-7P8RT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3660f980-6286-464e-974f-c760989f65a9",
+        "file_size": 4539399241
+    },
+    {
+        "md5sum": "98ce829f53115d8b2d112c8bc70483a4",
+        "file_name": "GTEX-1B8SG-1326-SM-79ONT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/f4170b03-6117-427f-90db-faeaad46140e",
+        "file_size": 4719019250
+    },
+    {
+        "md5sum": "57f6c733cf7158a49b894deb6e23d76d",
+        "file_name": "GTEX-1B932-1426-SM-793AN.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/cae8f446-1df5-4e59-ae27-6bf36e69e024",
+        "file_size": 4026641508
+    },
+    {
+        "md5sum": "36afceb67fa0d54283e237d2181c092c",
+        "file_name": "GTEX-1B933-1226-SM-731DW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/4be73cfd-3071-4ec3-af26-f87e991ea830",
+        "file_size": 4062232602
+    },
+    {
+        "md5sum": "e26393c651ea5f1597c5783a5bf85066",
+        "file_name": "GTEX-1B98T-1126-SM-7EPHO.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/f9d597bd-f120-4adf-b382-16e1cb8924b1",
+        "file_size": 6843633035
+    },
+    {
+        "md5sum": "01aeb6c4a208dd2904c6ac7b1949b8b0",
+        "file_name": "GTEX-1B996-1426-SM-7EPIA.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6383c6cd-f149-4050-991e-0db2190cfd58",
+        "file_size": 6746543160
+    },
+    {
+        "md5sum": "8b4bba6294a9e5b956f0790166b5eb9a",
+        "file_name": "GTEX-1BAJH-1526-SM-7RHGI.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d63365ec-3062-45be-84c5-7a9e54deb07b",
+        "file_size": 5740392089
+    },
+    {
+        "md5sum": "79cfbcf03db32dca6d9cd7300657dc32",
+        "file_name": "GTEX-1C6VQ-1626-SM-79OO1.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d67e96a7-7a3f-4651-b11c-06c3c194cbb9",
+        "file_size": 4149321992
+    },
+    {
+        "md5sum": "5c5078fa2cc90ff164272976de472e70",
+        "file_name": "GTEX-1CAMQ-1426-SM-7MKFL.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/dd702079-23f1-4207-84c3-dcc60df58f58",
+        "file_size": 5031370804
+    },
+    {
+        "md5sum": "ec523fae30db80762a9a82711f2ee59c",
+        "file_name": "GTEX-1CB4F-1726-SM-7MGXH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/57c1ed74-18da-451b-8da0-4dad2aa26a70",
+        "file_size": 3131741654
+    },
+    {
+        "md5sum": "6974910cef64c13df365545e41ac7d08",
+        "file_name": "GTEX-1CB4J-0726-SM-7IGN8.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6d3f38ea-2d7c-4e6d-8fa7-9c171e6b3b98",
+        "file_size": 5571834587
+    },
+    {
+        "md5sum": "f92a2954b7cad6569a857ff304a97261",
+        "file_name": "GTEX-1E2YA-1226-SM-7MGY3.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8a841887-1311-48b0-85bd-7644e079eedf",
+        "file_size": 3924228311
+    },
+    {
+        "md5sum": "0ef3e3d99246cb7eebedf2280d9d2995",
+        "file_name": "GTEX-1EH9U-1126-SM-7IGLU.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c9b89fdb-a506-4455-b904-7a6eb437f468",
+        "file_size": 3583672970
+    },
+    {
+        "md5sum": "241ff6da6e883b0f75116880b804327c",
+        "file_name": "GTEX-1EKGG-1226-SM-7IGNO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/be4b4883-7aca-4c0a-8723-750434285e2b",
+        "file_size": 3796263036
+    },
+    {
+        "md5sum": "5139147eae1cd52839961cfff0cf0cc5",
+        "file_name": "GTEX-1EN7A-2026-SM-7MGY4.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b39a9aba-94ce-472d-81d4-0a08f5856e5e",
+        "file_size": 3341104993
+    },
+    {
+        "md5sum": "dcac3ec7cc113f6cf0886ac7e243e19a",
+        "file_name": "GTEX-1EN7A-2026-SM-EZ6Y5.bam",
+        "object_id": "dg.ANV0/1e4016bf-6ed0-430b-b203-8f1fbd6071a9",
+        "file_size": 14996656142
+    },
+    {
+        "md5sum": "1a3e9576565f70ed921c6d0720caabff",
+        "file_name": "GTEX-1EWIQ-0726-SM-7MKFW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2db40a30-8b9c-4b0b-a62f-c125a1bcff77",
+        "file_size": 4054716012
+    },
+    {
+        "md5sum": "75db853eab1b8f564491a6da5b3faa3a",
+        "file_name": "GTEX-1F75A-1626-SM-9JGGT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c936adca-ca16-4d57-8b14-30614dbefd07",
+        "file_size": 5090308413
+    },
+    {
+        "md5sum": "b4f978c5a0873aa29265a2d201f01c92",
+        "file_name": "GTEX-1GF9V-1226-SM-7MKGY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/4df7a632-8a7e-418e-ac6d-6fbe9d9a8d3a",
+        "file_size": 4649567061
+    },
+    {
+        "md5sum": "4eb67c1fa0601088c418e1054831bd01",
+        "file_name": "GTEX-1GF9W-0826-SM-7MKHI.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a1b0a68e-99d2-48d1-acaf-c27e19b667d4",
+        "file_size": 4189112165
+    },
+    {
+        "md5sum": "d5bfb320339f94559bb517e0cdf608d9",
+        "file_name": "GTEX-1GF9X-0426-SM-7MKHN.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/017c40fa-497e-4fc3-aaba-65b16d9f97e7",
+        "file_size": 4706025448
+    },
+    {
+        "md5sum": "487e7678e019eff490f38cf5212bb2e0",
+        "file_name": "GTEX-1GN1U-0926-SM-9WPPY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8070dab7-c464-4793-b23f-434bc150e938",
+        "file_size": 3903020796
+    },
+    {
+        "md5sum": "b34474decdb45795b500876a739641d1",
+        "file_name": "GTEX-1GN2E-0926-SM-9WPOH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/bfcf5fea-ea9d-439d-b60a-08086d11345c",
+        "file_size": 4154528158
+    },
+    {
+        "md5sum": "98a4f4732bb2ba19c42813b03bfcbec3",
+        "file_name": "GTEX-1GN73-1126-SM-9OSW5.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/49c8c3df-e74b-4dd8-adcd-577fb087692e",
+        "file_size": 5437643651
+    },
+    {
+        "md5sum": "6757675623131bf9e20c45b860759dde",
+        "file_name": "GTEX-1GZ4I-1526-SM-9OSW9.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/51d5db43-5a81-4b64-ba3b-6cfe79f195af",
+        "file_size": 5060124139
+    },
+    {
+        "md5sum": "17fb1dbe374387fd97102f32c54b13b1",
+        "file_name": "GTEX-1H11D-0826-SM-9OSWB.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7c0434c3-b4c3-457c-87fa-f3dce29bf01b",
+        "file_size": 4644753798
+    },
+    {
+        "md5sum": "d4e4e1829f7fe77ed21e8a63a6e49aeb",
+        "file_name": "GTEX-1H1DF-1326-SM-9WPPR.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/bffa89b7-0457-40b4-ac75-101d016f2cb0",
+        "file_size": 3959716220
+    },
+    {
+        "md5sum": "4d559b00e174a32ecf200fcfdc8c92ad",
+        "file_name": "GTEX-1H23P-1826-SM-A8NA5.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/a4464a59-b810-4489-9588-f98e6894e8fd",
+        "file_size": 5217406124
+    },
+    {
+        "md5sum": "3410b3d5b1b2afdf2f9b18ed3a517994",
+        "file_name": "GTEX-1HB9E-0626-SM-AHZ4K.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e524bbaa-b605-44c0-b038-a431440ed25a",
+        "file_size": 5260181893
+    },
+    {
+        "md5sum": "c5beb2b0c1dcfee2a8d9277094b3f94a",
+        "file_name": "GTEX-1HBPH-2626-SM-A96TV.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/34db913f-5819-4300-a095-004133e7c94a",
+        "file_size": 3340322044
+    },
+    {
+        "md5sum": "dec41ecd93b15f0dfeb86d805ffbcdd6",
+        "file_name": "GTEX-1HBPI-1026-SM-AHZ4N.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/13d2431a-42cd-450a-a039-24e242f35d23",
+        "file_size": 6181774183
+    },
+    {
+        "md5sum": "5321571c6a919695c1ee7a9890f59de3",
+        "file_name": "GTEX-1HCU6-2026-SM-A8NA7.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/baf1ff6e-7a57-4b16-82df-bf9ea175e9e1",
+        "file_size": 4266937999
+    },
+    {
+        "md5sum": "8665e455f075c9655193f89f72fdcb44",
+        "file_name": "GTEX-1HCU7-1726-SM-B2LX9.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1aabe89a-7cec-4506-b341-f78f7e540d62",
+        "file_size": 2629047556
+    },
+    {
+        "md5sum": "3ed481a2202fa82471090f8d690f72c7",
+        "file_name": "GTEX-1HCVE-1526-SM-B2LWW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/fc3ab4f0-9984-488e-bf65-14fb4c91582f",
+        "file_size": 2875619371
+    },
+    {
+        "md5sum": "b10af92de056ed31df5528e2e3d9573d",
+        "file_name": "GTEX-1HT8W-0826-SM-C1YRJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8c07bbc7-9510-4dcd-8105-b4b47a18528b",
+        "file_size": 3378373967
+    },
+    {
+        "md5sum": "9bb438ed74dfd6816c42f279e00ca94b",
+        "file_name": "GTEX-1I1GR-1526-SM-CNNQE.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c5975e39-d808-4c8f-8802-9ca4ef754ba6",
+        "file_size": 4468480795
+    },
+    {
+        "md5sum": "e351d730e3ddf59d40736f23e48977e2",
+        "file_name": "GTEX-1I1GV-1026-SM-A8N8D.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/5d45a86d-dc66-458a-a073-051a38eba24a",
+        "file_size": 5228951683
+    },
+    {
+        "md5sum": "fe54f2c4c0cfbc2d397d448bbb81f273",
+        "file_name": "GTEX-1I1HK-1126-SM-AHZ2L.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/f3595ea0-54e6-49d9-aeac-1a89156144c7",
+        "file_size": 6207422843
+    },
+    {
+        "md5sum": "6757ba83e4c4bb536f2b2ef5085865c6",
+        "file_name": "GTEX-1ICG6-1026-SM-B2LY6.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/79ee099d-1b68-4c7e-9234-1849601132de",
+        "file_size": 3510743317
+    },
+    {
+        "md5sum": "4846bedc06ede7d5967dd8d514809f3f",
+        "file_name": "GTEX-1ICLY-1526-SM-C1YS4.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/11d95496-9a30-41ef-9823-4e05e5805f34",
+        "file_size": 3791753917
+    },
+    {
+        "md5sum": "17ba43d9a7d2141197f4794f84e88061",
+        "file_name": "GTEX-1IDJH-1526-SM-A8N96.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/74c10e07-7b0a-4e82-906b-9f1bb64afbe5",
+        "file_size": 4591661014
+    },
+    {
+        "md5sum": "8e8f781f34655505ac2393a3684116cc",
+        "file_name": "GTEX-1IKJJ-1526-SM-C1YSC.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0ea8b6d1-72de-4796-b090-dc0dedcb60c5",
+        "file_size": 3906764875
+    },
+    {
+        "md5sum": "ca3a3f826613be2330ff6dda71fc9100",
+        "file_name": "GTEX-1IKK5-0326-SM-C1YPY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6b56ea25-725e-49ae-8087-219e91ad893c",
+        "file_size": 3414991617
+    },
+    {
+        "md5sum": "66dfd450791e3a0f270f4baea5d4f7bb",
+        "file_name": "GTEX-1J1OQ-0826-SM-CXZJG.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/3c8ec441-f6a0-4afc-b05a-417f13cc0245",
+        "file_size": 4257000863
+    },
+    {
+        "md5sum": "064b7e0eecc09b64c44bca86671d52b5",
+        "file_name": "GTEX-1J8EW-1626-SM-C1YQ8.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/81e7dd9f-a9d4-4a8e-8d57-93012514dd99",
+        "file_size": 5420384488
+    },
+    {
+        "md5sum": "c67a43563f3f981975b13c545ca10b23",
+        "file_name": "GTEX-1JJ6O-0826-SM-CXZJL.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/224d0c96-a210-48ba-a0b2-49277cc01b58",
+        "file_size": 4073047760
+    },
+    {
+        "md5sum": "8464dcd006ba808092791c5b68776014",
+        "file_name": "GTEX-1JJEA-1526-SM-CNNPK.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/cea6c3bc-6cae-4d22-b022-6ac23f23b274",
+        "file_size": 5300385310
+    },
+    {
+        "md5sum": "877145ef4f9da4777cf0c971c73a70cb",
+        "file_name": "GTEX-1JMLX-1326-SM-CXZJO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6a6a5f4d-89a8-4e69-b32e-a338874352db",
+        "file_size": 3714952997
+    },
+    {
+        "md5sum": "4a5ccb1046d17e7c3505896f0f2da8ce",
+        "file_name": "GTEX-1K9T9-0726-SM-CXZJZ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/51ceb5d6-b843-4a45-add5-981ec0b9b736",
+        "file_size": 4519204905
+    },
+    {
+        "md5sum": "816ad39f10f357d18cec3ff139bbc8de",
+        "file_name": "GTEX-1KAFJ-0726-SM-CXZKF.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/df301197-fde5-4368-9298-da40621daecc",
+        "file_size": 3986766650
+    },
+    {
+        "md5sum": "74bb59422557ee40e28cce32bd72408e",
+        "file_name": "GTEX-1KANB-2226-SM-DHXJW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1c11e4ff-0af7-4620-841c-551cb63f53ef",
+        "file_size": 3625164697
+    },
+    {
+        "md5sum": "3295a736ec933408a37888c5621e9822",
+        "file_name": "GTEX-1KD4Q-1526-SM-D4P3L.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/be77cab3-cacf-494d-a341-b8c09fa0db02",
+        "file_size": 4878954766
+    },
+    {
+        "md5sum": "a642d80b0fc7dab8c00b57f5b4488f74",
+        "file_name": "GTEX-1KD5A-1226-SM-CXZK7.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/4e1bde29-da39-468d-9482-8d73381cb0e3",
+        "file_size": 4057413602
+    },
+    {
+        "md5sum": "ba8683b86c7a2c87be881ac2bbfee81b",
+        "file_name": "GTEX-1KWVE-0326-SM-EV7AF.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/5634ce8d-2532-4349-9140-15d3d9d717b0",
+        "file_size": 4579874733
+    },
+    {
+        "md5sum": "d42306b169d27e7413e9c2a0026fe8d0",
+        "file_name": "GTEX-1LGRB-0626-SM-CNNQH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6c689ecd-09f7-4932-91e7-4cc159c90506",
+        "file_size": 6761456903
+    },
+    {
+        "md5sum": "cba06573e683776978818a970239b121",
+        "file_name": "GTEX-1LH75-0926-SM-EAZ5C.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ad34c473-a5e3-47a1-bb40-99cb53fe354a",
+        "file_size": 4442124888
+    },
+    {
+        "md5sum": "283d48397a2caa8f510e3aa63a396993",
+        "file_name": "GTEX-1MJIX-0726-SM-DPRYP.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d5d1bcb5-195a-4cbb-8fb5-c37e37601e54",
+        "file_size": 3563261841
+    },
+    {
+        "md5sum": "4856f2028ac49fc080f2ed4e7dd843be",
+        "file_name": "GTEX-1NV8Z-1626-SM-DPRYT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7b71c4a3-4ed0-4a67-a792-7e639c3c7439",
+        "file_size": 2502160882
+    },
+    {
+        "md5sum": "c3e75f310bf42cebba5be04b9ffc2ce2",
+        "file_name": "GTEX-1PBJJ-0626-SM-DPRYO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e9151f03-5335-4d62-a5f9-b78ed43e2b9f",
+        "file_size": 3545307720
+    },
+    {
+        "md5sum": "2ff4dda8b5b0c7b98ea33e40637805b4",
+        "file_name": "GTEX-1PIIG-1326-SM-EXOIR.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1d8ea7ff-16f7-4dcd-a0ce-6da219f8d998",
+        "file_size": 3707928966
+    },
+    {
+        "md5sum": "b35edbe3e99626c1b16f1f3567c895c3",
+        "file_name": "GTEX-1QCLZ-1226-SM-EAZ49.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/11798dc3-ee9b-4ed7-8002-5f60b914d83b",
+        "file_size": 6770546039
+    },
+    {
+        "md5sum": "3245642e0cc2c61eca7e871df8b22f92",
+        "file_name": "GTEX-1QP66-0226-SM-DPRXS.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a8f98d1c-2d91-4571-bdd7-0a3c844da71a",
+        "file_size": 3074862481
+    },
+    {
+        "md5sum": "65e5678fc8c885053a567514f4fd67f5",
+        "file_name": "GTEX-1QP6S-1326-SM-DPRZ8.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/14b10226-ddb3-49ae-b10f-64351bc6faf3",
+        "file_size": 2533587549
+    },
+    {
+        "md5sum": "bf0be56b856b9f49335bb0787d513910",
+        "file_name": "GTEX-1QPFJ-1126-SM-E9U5V.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ba6decfb-f7ce-4807-bc52-16269c9976d3",
+        "file_size": 4135085636
+    },
+    {
+        "md5sum": "d1c6a7eea8a0e132c73449edb708adf0",
+        "file_name": "GTEX-1R9JW-0826-SM-DPRZJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ad664e83-f279-44cc-9d4a-d2149192eefd",
+        "file_size": 3691080704
+    },
+    {
+        "md5sum": "462a28160970bbe3625a5a0d60fda111",
+        "file_name": "GTEX-1RQEC-1126-SM-EAZ5E.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/387bff8a-c8da-4cc0-937a-b0e0a2ebf5a1",
+        "file_size": 6611997245
+    },
+    {
+        "md5sum": "d2f2316c6a6159634a20c731354d5c39",
+        "file_name": "GTEX-1S5VW-1826-SM-EAZ53.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ea23a7d3-6748-4382-83d5-becb5162d56b",
+        "file_size": 3337534450
+    },
+    {
+        "md5sum": "26cd88759f73815b0d59a48c44dcc59e",
+        "file_name": "GTEX-1S82Y-1026-SM-EV7BJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7237690f-ef43-499c-afa6-e63014e61958",
+        "file_size": 4344996135
+    },
+    {
+        "md5sum": "ffb75dea7dff04b147b6e27a3acf3503",
+        "file_name": "GTEX-O5YT-0826-SM-3TW8N.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d4fc44f0-0590-4d64-8d0e-216afd2e899b",
+        "file_size": 10083762533
+    },
+    {
+        "md5sum": "49c43ef39a837eb2c9a9732ab32118b4",
+        "file_name": "GTEX-O5YV-0726-SM-EV798.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/59b5ff3a-6355-4a27-88aa-a38a26537a20",
+        "file_size": 4873269288
+    },
+    {
+        "md5sum": "4268a10df234e0b30a00cf412ff5e875",
+        "file_name": "GTEX-OIZF-0826-SM-3MJGO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/32467fcd-20ce-4f2f-9f41-ba087165b8fb",
+        "file_size": 9160642766
+    },
+    {
+        "md5sum": "c71623af15c8c8c26657dafa6b857379",
+        "file_name": "GTEX-OOBJ-0826-SM-3NB2K.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/4655b2dc-6b96-4137-9f4d-5149e9e33bab",
+        "file_size": 9009116240
+    },
+    {
+        "md5sum": "7cd673344ffef44543e08c3532854b3b",
+        "file_name": "GTEX-P44G-1126-SM-3NM9D.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/da78f38b-cb34-45de-8a18-9f285f3ac898",
+        "file_size": 8682669859
+    },
+    {
+        "md5sum": "5e69cd28ac18be90c6f64f6077aff529",
+        "file_name": "GTEX-P78B-1326-SM-3P611.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/96df68f7-2bb8-405b-8ccc-82f4690c0228",
+        "file_size": 8500638750
+    },
+    {
+        "md5sum": "b7749c2f2c674404da9bb7a6aea0374e",
+        "file_name": "GTEX-PWOO-0826-SM-48TCL.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/87d0b5bf-ef43-41d1-b5d5-6a8cd11bfe18",
+        "file_size": 3311270302
+    },
+    {
+        "md5sum": "fedcc31d3115775efcaa0d8b4d06638f",
+        "file_name": "GTEX-PX3G-0826-SM-48TZS.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/55129651-3a35-41c4-9228-f0eaf2a4ea31",
+        "file_size": 4096446651
+    },
+    {
+        "md5sum": "bdd8a09d01f591c27349832a0a0de2f9",
+        "file_name": "GTEX-Q2AG-1126-SM-48U1P.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/87470027-52c8-408f-8296-e9ee7f693cd3",
+        "file_size": 4990645879
+    },
+    {
+        "md5sum": "93866c92446769774184b1937b689898",
+        "file_name": "GTEX-Q734-0326-SM-48U15.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d90a55b1-d1af-4292-b0dd-5b04d718ec25",
+        "file_size": 5058711964
+    },
+    {
+        "md5sum": "12ca6b13a5167c0c66be2e2bcb4d1024",
+        "file_name": "GTEX-QDVN-0826-SM-48TZ2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/2e81bde5-593a-48c4-b6aa-0a72c748f0ea",
+        "file_size": 4166667581
+    },
+    {
+        "md5sum": "854bf5462471a8e0393e295f24ab689a",
+        "file_name": "GTEX-QEG4-1826-SM-447AK.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/877474fd-b6c1-4c6f-9159-c2c4c10de024",
+        "file_size": 3687268654
+    },
+    {
+        "md5sum": "ea1b16fea1c4ca1c37cf4961febf9f47",
+        "file_name": "GTEX-QEG4-1826-SM-4R1JN.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/53daefcd-6e97-411c-a109-a1a8c2317cc3",
+        "file_size": 3945884684
+    },
+    {
+        "md5sum": "eb2e578494b7d107c42d133461b5b32b",
+        "file_name": "GTEX-QEG4-1826-SM-CKZN9.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c84a6c91-c784-449a-a2e3-e705a6cd1dcd",
+        "file_size": 4058698365
+    },
+    {
+        "md5sum": "4221b0b91f830e36c6a3548392a1de0d",
+        "file_name": "GTEX-QEL4-1226-SM-447A4.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/f31f06d7-e0bc-4853-ba41-93114d6a3aca",
+        "file_size": 4322681742
+    },
+    {
+        "md5sum": "d0d34ec6e1638cad5be8e0d7698f3991",
+        "file_name": "GTEX-QESD-2026-SM-447BI.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/5f908183-4c43-4b3f-9aa4-250ab4422875",
+        "file_size": 3216619406
+    },
+    {
+        "md5sum": "d51d3832c86684d4c1f5aea0a8aa3201",
+        "file_name": "GTEX-QV44-0326-SM-4R1KD.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/77b79071-95ad-4768-90c0-327cc15a2896",
+        "file_size": 3656924912
+    },
+    {
+        "md5sum": "77bef7c6263b3d8880e1ffed3db3c5bf",
+        "file_name": "GTEX-QV44-0326-SM-C1YQX.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/f2dd2795-4a8e-45c5-8efc-648dbb9f68fe",
+        "file_size": 4377087062
+    },
+    {
+        "md5sum": "f42d475ff35c00bbd664caa625b5c073",
+        "file_name": "GTEX-R53T-0326-SM-48FEC.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/4757c3d2-46c9-403d-982c-7125761f4c8d",
+        "file_size": 4636473347
+    },
+    {
+        "md5sum": "7a07383ac3bbbed3c89312feb9ba68e1",
+        "file_name": "GTEX-REY6-1226-SM-48FDR.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/00b4d977-acad-41aa-84b6-935573b0f157",
+        "file_size": 4905703519
+    },
+    {
+        "md5sum": "00f4047cdfd507e617a50725a5db6f10",
+        "file_name": "GTEX-RM2N-1926-SM-48FCU.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/51d5bf7c-1acd-45a5-a3d0-fc8bef6226fb",
+        "file_size": 4845418706
+    },
+    {
+        "md5sum": "d84695476584c3073fb263152934c5a3",
+        "file_name": "GTEX-RN64-1826-SM-48FDV.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/34637185-7122-4042-be70-9567e9d2fba4",
+        "file_size": 3994335564
+    },
+    {
+        "md5sum": "7428f4c9bcaaf6195eee332419fca9c8",
+        "file_name": "GTEX-RNOR-1426-SM-48FDJ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b2edfc78-e303-4e37-8f1b-cc5783fae2fa",
+        "file_size": 4597910815
+    },
+    {
+        "md5sum": "7e8c510646cca222def8508c5d35aac1",
+        "file_name": "GTEX-RTLS-1326-SM-46MUN.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e847f9ec-ab69-48d3-bd53-96a52581ea2d",
+        "file_size": 4639232394
+    },
+    {
+        "md5sum": "b5eebb94050295efd12ca34a06b981ef",
+        "file_name": "GTEX-RU72-1426-SM-46MUF.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0f461bd8-1f5b-4e75-bd04-007e554cf4b0",
+        "file_size": 4153136545
+    },
+    {
+        "md5sum": "857ca38e23ee9956e90cc47c7699fdba",
+        "file_name": "GTEX-RWSA-1426-SM-47JXA.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/919b96ec-8378-4bfd-89ff-cf42d76a8db9",
+        "file_size": 5851206144
+    },
+    {
+        "md5sum": "1851488ec22b2c73b96d88b775cd1753",
+        "file_name": "GTEX-S32W-1926-SM-4AD63.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7cd76664-b23a-44de-94cd-13dcd6636219",
+        "file_size": 4992314957
+    },
+    {
+        "md5sum": "e0f4fcf38a30a80f34c009d66732da3f",
+        "file_name": "GTEX-S33H-1626-SM-4AD68.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/79c29699-916e-4d6a-bf2e-f06200f8f83a",
+        "file_size": 4353258803
+    },
+    {
+        "md5sum": "6700b5701a02573a0256a66f0c53d9f4",
+        "file_name": "GTEX-S4Z8-0526-SM-4AD4T.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0d30f9f1-414c-4932-85ca-3d83b34cd608",
+        "file_size": 4815182891
+    },
+    {
+        "md5sum": "39ad8c74babf0e0bdca8093db76206ec",
+        "file_name": "GTEX-SJXC-1226-SM-4DM78.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3cf439f3-59d0-4e4d-b651-4913cfce434b",
+        "file_size": 5453769352
+    },
+    {
+        "md5sum": "20258f7fb384c7357b7d76aab166cba2",
+        "file_name": "GTEX-T6MN-1226-SM-3NMA5.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/901d8d7b-a16c-4d9b-9c77-4a6cb5263679",
+        "file_size": 8076501918
+    },
+    {
+        "md5sum": "5d380dab99cab6f2380915c3cec00a49",
+        "file_name": "GTEX-TKQ2-1726-SM-4DXUP.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/a91e7a02-d2b2-41d0-adab-c14fc0683d0a",
+        "file_size": 5137836802
+    },
+    {
+        "md5sum": "64bb8865cd6451e839037a7fc10a7f51",
+        "file_name": "GTEX-U3ZN-0226-SM-3DB8D.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/9eca9a28-524e-484c-a35c-ac7fa22b3773",
+        "file_size": 10163947656
+    },
+    {
+        "md5sum": "1543d7fb4ca0518e410b29a449ae8abb",
+        "file_name": "GTEX-U8XE-1526-SM-4E3HT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b98af7b7-732f-4a45-b2bd-a6457862665a",
+        "file_size": 7211593896
+    },
+    {
+        "md5sum": "68917b11d7e23156024139570146e5d9",
+        "file_name": "GTEX-UPIC-0926-SM-4IHLV.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/9417fb58-76f6-403a-954e-ee7203bec8b2",
+        "file_size": 4555983745
+    },
+    {
+        "md5sum": "decb4861351955024537adf29c75bc2b",
+        "file_name": "GTEX-UPK5-1426-SM-4JBHH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/44c5168e-7d24-451b-bf26-f74a702c4c33",
+        "file_size": 6563628891
+    },
+    {
+        "md5sum": "ea882de68ee2a00ffc5672412f74cc13",
+        "file_name": "GTEX-UTHO-2426-SM-4JBHD.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/c3c8f33c-5782-4cb2-bd06-2410faabff79",
+        "file_size": 4635798217
+    },
+    {
+        "md5sum": "ff91b0c7482f3d9b5d9323d3db29f79e",
+        "file_name": "GTEX-UTHO-2426-SM-CKJTI.bam",
+        "object_id": "dg.ANV0/d4235661-828f-4b08-b684-e0d89a69367f",
+        "file_size": 25973833066
+    },
+    {
+        "md5sum": "72ad3cf1614e76d0c9e5403748d18a62",
+        "file_name": "GTEX-VUSG-0126-SM-4KL1X.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d9b3ce26-78cb-4222-a4ec-e78d90235255",
+        "file_size": 6483949722
+    },
+    {
+        "md5sum": "208197d9fbd0d0071b82e4587bef8d3e",
+        "file_name": "GTEX-WFON-1726-SM-4LVMQ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/b574361e-c843-4947-a9f6-4a416326e979",
+        "file_size": 4235470790
+    },
+    {
+        "md5sum": "9ffb033e9e97bbcc8dfd95da2e343de4",
+        "file_name": "GTEX-WK11-1326-SM-4OOSI.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/e6667233-8b07-4c9e-be32-6eefd9f1807f",
+        "file_size": 15315478321
+    },
+    {
+        "md5sum": "fbb89d58602f298ed54b99b896ed31b9",
+        "file_name": "GTEX-WQUQ-1926-SM-4OOSA.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0f816c5a-842f-44a7-a67a-fada48697d61",
+        "file_size": 3640782949
+    },
+    {
+        "md5sum": "3521d140610c7806b4092c9669a3382e",
+        "file_name": "GTEX-WVLH-2126-SM-EYYWD.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6d77ee8c-a1ec-4624-8af7-fbd4674e8ea3",
+        "file_size": 3162871958
+    },
+    {
+        "md5sum": "8ea772cf0c28e08205ed0e59b795d01c",
+        "file_name": "GTEX-WY7C-0726-SM-4ONCB.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/06a07bf5-06e4-4c5b-9f6b-366381841403",
+        "file_size": 5040895577
+    },
+    {
+        "md5sum": "ee23b2b009eca039911e8439e3cb550d",
+        "file_name": "GTEX-WYVS-1926-SM-4PQZ2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8a4f4893-2647-4d9a-9dd1-d5bb547474d1",
+        "file_size": 9455256112
+    },
+    {
+        "md5sum": "7198b4cef29136b458fa0a22acbfe29a",
+        "file_name": "GTEX-WYVS-1926-SM-4SOIC.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/faad5585-9031-42f6-9581-0ac017eea848",
+        "file_size": 5718678737
+    },
+    {
+        "md5sum": "9db0a0d163272514954047a312dfb575",
+        "file_name": "GTEX-WZTO-0626-SM-4PQYY.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/539c61bb-5f53-4ba2-9fda-6ce34f46c562",
+        "file_size": 3497046670
+    },
+    {
+        "md5sum": "fb615c7fdcce15471fb4088e227bb5ca",
+        "file_name": "GTEX-X261-1726-SM-4PQYT.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7a34b48e-5a0a-41ca-a74d-90e9d971b4c4",
+        "file_size": 3314246900
+    },
+    {
+        "md5sum": "af7d0517724651834bcf0636d6415f98",
+        "file_name": "GTEX-X3Y1-2726-SM-4PQZH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8e1fc9d8-6565-42e2-a0ce-1d638f4bfed4",
+        "file_size": 3544616200
+    },
+    {
+        "md5sum": "cef1fcaba0b588ab70b6f53aeae5c47e",
+        "file_name": "GTEX-X4EO-1126-SM-4QARQ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/eef5e313-7c06-4c6e-bc40-c016d45fb658",
+        "file_size": 3925564829
+    },
+    {
+        "md5sum": "e3081fdf2dfa6896c463aab0e93abbed",
+        "file_name": "GTEX-X4EP-1026-SM-4QAS5.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/1e4040ac-229d-4b22-bdac-de5af2c879e4",
+        "file_size": 4791564030
+    },
+    {
+        "md5sum": "d07d8bdb5cc0606d3dd9fb9c9679beb5",
+        "file_name": "GTEX-X4XY-1626-SM-46MVN.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ce65dce8-5daa-4639-8f30-ef1df481e865",
+        "file_size": 4716077174
+    },
+    {
+        "md5sum": "59016a97143ab04c31f34ed6ad98f6a9",
+        "file_name": "GTEX-XBEC-1526-SM-4AT68.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/8740d561-c289-48c6-867c-df777c5095fe",
+        "file_size": 4622232742
+    },
+    {
+        "md5sum": "dd1d4b2428f94907e27c47b9f546facb",
+        "file_name": "GTEX-XOTO-0826-SM-4B65O.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/e453302f-f9e6-4eee-be80-5c32a3b21f5d",
+        "file_size": 6333963706
+    },
+    {
+        "md5sum": "aeb9a7a260cde586274f84fa455497bb",
+        "file_name": "GTEX-XXEK-1126-SM-4BRUX.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/7c3061ee-7fba-4a48-9c92-3391be732595",
+        "file_size": 4482085675
+    },
+    {
+        "md5sum": "6589c765e806184b55104aeb4e35de94",
+        "file_name": "GTEX-Y111-0726-SM-EYYVM.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/504cc972-60f0-4210-9845-ed9d2d9253e8",
+        "file_size": 2842246255
+    },
+    {
+        "md5sum": "11d77ddbf2a25b8a305d377e9d10135a",
+        "file_name": "GTEX-Y5LM-0426-SM-4VBRO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/df5a176b-2d89-40c6-b981-f0fc39e31392",
+        "file_size": 8569269183
+    },
+    {
+        "md5sum": "f0f5a74e5c64f2a40bd065eaf7cbe58b",
+        "file_name": "GTEX-Y5V5-0926-SM-4VBPZ.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/bb0624cb-57b3-468d-9005-b425f397f2de",
+        "file_size": 7967395731
+    },
+    {
+        "md5sum": "1bd0651ec69a9ce3503d21624d421ae5",
+        "file_name": "GTEX-YB5E-0326-SM-5IFHU.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/3f586209-9582-4caa-a97e-ef824d545e71",
+        "file_size": 6898390077
+    },
+    {
+        "md5sum": "5cf70f2d7329aa1115fb437fdc8b8f54",
+        "file_name": "GTEX-YEC4-0826-SM-5P9FV.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d98c10bf-3b39-4fc8-9f60-b7c0cfee974b",
+        "file_size": 8880309671
+    },
+    {
+        "md5sum": "c6901342466bfc51afdd1fbc093e07ff",
+        "file_name": "GTEX-YECK-1926-SM-4W21H.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/6d7d75fa-15e9-49f7-a44d-14e09ee8c80c",
+        "file_size": 12413924026
+    },
+    {
+        "md5sum": "846e6b0b2e726965dac8e79e4afb1254",
+        "file_name": "GTEX-YFC4-1526-SM-5IFJS.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ebc05c4d-94f2-4731-adf4-5627c4edefc7",
+        "file_size": 6203219661
+    },
+    {
+        "md5sum": "5da3e2a3d14730b775cf6f6cd2a8d95c",
+        "file_name": "GTEX-Z9EW-0426-SM-5CVM9.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/83e1bed2-d55d-41e2-ae0c-01786fbf01b8",
+        "file_size": 5853016932
+    },
+    {
+        "md5sum": "991ecc4ba33ccb812ad2e11a00338b53",
+        "file_name": "GTEX-ZAB4-0826-SM-5LU9D.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/41911035-c580-45ca-b01a-aaef861afd77",
+        "file_size": 4901684452
+    },
+    {
+        "md5sum": "41834403a63b173e5067f340389d00e5",
+        "file_name": "GTEX-ZAB5-0426-SM-5CVMI.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d5117260-e519-4a6f-8b9b-66bca1b1188f",
+        "file_size": 7203389341
+    },
+    {
+        "md5sum": "fcae028836438cb1c880d19eb8e2ea93",
+        "file_name": "GTEX-ZEX8-0826-SM-4WKHK.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ea856753-78bf-458c-a5f0-e93db3061e75",
+        "file_size": 4084298355
+    },
+    {
+        "md5sum": "1f69d48321e30bf6d34fd4cfe8ca74fb",
+        "file_name": "GTEX-ZF29-2026-SM-4WWB7.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/9a94df3f-06f6-4e72-9c25-a861c86e2850",
+        "file_size": 7244338650
+    },
+    {
+        "md5sum": "f0c3a6bf96f075f16e6230c2562106cb",
+        "file_name": "GTEX-ZF29-2026-SM-DNZYW.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d6a96c6c-5432-405c-bb91-8cc1c643e206",
+        "file_size": 5239466581
+    },
+    {
+        "md5sum": "38da436aa86d8a5740b7f89534ea9e7b",
+        "file_name": "GTEX-ZF2S-3026-SM-4WWCH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/ad1d3980-d9f9-49e2-b333-8d7c31b6df52",
+        "file_size": 5277877173
+    },
+    {
+        "md5sum": "f5713602b7e7c61484f54edee99a790e",
+        "file_name": "GTEX-ZPU1-0826-SM-57WG2.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/5a84c777-9dcb-4215-a428-fc95aa0b1d7e",
+        "file_size": 6828582089
+    },
+    {
+        "md5sum": "44af9dc543184dc4ce03fbc0171a0c4a",
+        "file_name": "GTEX-ZPU1-0826-SM-73KXI.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/54bec114-98fc-499e-98c3-7653807adf16",
+        "file_size": 4830489935
+    },
+    {
+        "md5sum": "82eee82656ba86221b792e781752b4d8",
+        "file_name": "GTEX-ZPU1-0826-SM-7DHMN.Aligned.sortedByCoord.out.patched.bam",
+        "object_id": "dg.ANV0/56d35d68-2e16-403a-bade-c98ebb04e94b",
+        "file_size": 5032238544
+    },
+    {
+        "md5sum": "eee9a0231879ee596b1c8c5c97afb0c7",
+        "file_name": "GTEX-ZTPG-1426-SM-51MT3.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/47a30778-5177-4327-bb4e-cc14bc50eb2f",
+        "file_size": 7084216167
+    },
+    {
+        "md5sum": "50b0c2dfb007e394f30613237615a070",
+        "file_name": "GTEX-ZVP2-0626-SM-51MSO.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/381a7a98-fd60-4d99-ab49-102bac9e33c1",
+        "file_size": 6898021949
+    },
+    {
+        "md5sum": "421561c15b7b16b1bd42a9deef08e3e6",
+        "file_name": "GTEX-ZVT3-1626-SM-5GU66.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0fecee46-fb00-4795-85f8-625d4dbcf0a1",
+        "file_size": 4130537698
+    },
+    {
+        "md5sum": "580c15a792f9f801188edf0024014d29",
+        "file_name": "GTEX-ZVT4-0626-SM-5E45T.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/96b169db-3456-4f4b-97f7-48951681d3f1",
+        "file_size": 5810581475
+    },
+    {
+        "md5sum": "a5ed9229b6b61cdbb94f84899f86dee4",
+        "file_name": "GTEX-ZYT6-0626-SM-5E45V.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/d3443fb1-71af-402a-bda0-dc357c8733fa",
+        "file_size": 6572964507
+    },
+    {
+        "md5sum": "b7c07bcdb14f93e9ddbe426ba4da678a",
+        "file_name": "GTEX-ZYY3-0626-SM-5NQ6W.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/fa90abd4-f87d-4cd4-90e9-162f1a67f629",
+        "file_size": 5262556935
+    },
+    {
+        "md5sum": "d0a70382992f5d42c3fdca137635d3b5",
+        "file_name": "GTEX-ZZPU-0426-SM-5GZYH.Aligned.sortedByCoord.out.patched.md.bam",
+        "object_id": "dg.ANV0/0592e058-9f3d-420b-9662-0410e957b39a",
+        "file_size": 5673449121
+    }
+]

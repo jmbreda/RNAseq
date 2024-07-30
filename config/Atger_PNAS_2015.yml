@@ -1,0 +1,12 @@
+Name: Atger_PNAS_2015
+Species: mm10
+Promoterome: '~/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff'
+GenomeFiles:
+  genome: "genome.fa"
+  gtf:    "gene_annotation.gtf"
+  cdna:   "cdna.fa"
+URLs:
+  gtf:    "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.basic.annotation.gtf.gz"
+  genome: "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/GRCm38.primary_assembly.genome.fa.gz"
+  cDNA:   "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.pc_transcripts.fa.gz"
+         
