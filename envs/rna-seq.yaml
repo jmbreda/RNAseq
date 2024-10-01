@@ -1,0 +1,13 @@
+name: rna-seq
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - snakemake=7.32
+    - matplotlib
+    - ipython
+    - scipy
+    - numpy
+    - pandas
+    - samtools

@@ -1,4 +1,5 @@
 Genome: mm10
 Datasets:
-    - A_circadian_gene_expression_atlas_in_mouse
-    - Weger_CellMetab_2019
+    - "Weger_CellMetab_2019"
+    - "Zhang_PNAS_2014"
+    - "Atger_PNAS_2015"
