@@ -5,3 +5,5 @@ results/
 .snakemake/
 log/
 tmp/
+stdout/
+stderr/

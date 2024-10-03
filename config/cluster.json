@@ -1,0 +1,31 @@
+{
+    "__default__" :
+    {
+        "name" : "snakejob",
+        "qos" : "serial",
+        "stdout" : "stdout/slurm-%x-%j",
+        "stderr" : "stderr/slurm-%x-%j",
+        "time" : "01:00:00",
+        "n" : 1,
+        "mem" : "6G",
+        "nodes" : 1,
+        "ntasks" : 1,
+        "cpus-per-task" : 1
+    },
+
+    "run_index_kallisto" :
+    {
+        "name" : "kallisto_index",
+        "time" : "12:00:00",
+        "cpus-per-task" : 1,
+        "mem" : "200G"
+    },
+
+    "kallisto_quant" :
+    {
+        "name" : "kallisto_quant",
+        "time" : "12:00:00",
+        "cpus-per-task" : 72,
+        "mem" : "200G"
+    }
+}

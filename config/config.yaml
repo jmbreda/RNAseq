@@ -1,5 +1,14 @@
-Genome: mm10
 Datasets:
-    - "Weger_CellMetab_2019"
-    - "Zhang_PNAS_2014"
-    - "Atger_PNAS_2015"
+    Zhang_PNAS_2014
+    Atger_PNAS_2015
+    Weger_CellMetab_2019
+Species: mm10
+Promoterome: '~/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff'
+GenomeFiles:
+    genome: "genome.fa"
+    gtf:    "gene_annotation.gtf"
+    cdna:   "cdna.fa"
+URLs:
+    gtf:    "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.basic.annotation.gtf.gz"
+    genome: "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/GRCm38.primary_assembly.genome.fa.gz"
+    cDNA:   "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.pc_transcripts.fa.gz"

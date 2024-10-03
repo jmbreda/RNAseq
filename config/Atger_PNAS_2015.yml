@@ -1,6 +1,6 @@
 Name: Atger_PNAS_2015
 Species: mm10
-Promoterome: '~/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff'
+Promoterome: '/home/jbreda/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff'
 GenomeFiles:
   genome: "genome.fa"
   gtf:    "gene_annotation.gtf"
