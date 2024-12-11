@@ -13,22 +13,24 @@ def parse_argument():
 if __name__ == '__main__':
     args = parse_argument()
 
-    # merge all tables
-    premrna = pd.DataFrame()
-    mrna = pd.DataFrame()
+    # concatenate all tables
+    abundance = pd.DataFrame()
     for table in args.intables:
-        print(table)
-        tmp = pd.read_csv(table, sep='\t')
-        N = tmp.shape[0]
-        premrna = pd.concat([premrna, tmp.loc[:N//2-1,'tpm']], axis=1)
-        mrna = pd.concat([mrna, tmp.loc[N//2:,'tpm']], axis=1)
+        tmp = pd.read_csv(table, sep='\t', index_col=0, usecols=['target_id', 'tpm'])
+        tmp.columns = [table.split('/')[-2]]
+        abundance = pd.concat([abundance, tmp], axis=1)
+    del tmp
 
-    cols = [f.split('/')[-2] for f in args.intables]
-    premrna.columns = cols
-    mrna.columns = cols
-    premrna.index = tmp.loc[:N//2-1,'target_id']
-    mrna.index = tmp.loc[N//2:,'target_id']
+    # split between mRNA and pre-mRNA
+    premrna_idx = [id[:11]=="pre_ENSMUST" for id in abundance.index]
+    mrna_idx = [id[:7]=="ENSMUST" for id in abundance.index]
 
+    # check that all transcripts are either pre-mRNA or mRNA
+    assert sum(premrna_idx) + sum(mrna_idx) == len(abundance.index)
+    premrna = abundance.loc[premrna_idx,:]
+    mrna = abundance.loc[mrna_idx,:]
+
+    # save tables
     premrna.to_csv(args.out_premrna, sep='\t')
     mrna.to_csv(args.out_mrna, sep='\t')
-            
+    

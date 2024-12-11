@@ -1,7 +1,9 @@
 Datasets:
-    Zhang_PNAS_2014
-    Atger_PNAS_2015
-    Weger_CellMetab_2019
+    - Zhang_PNAS_2014
+    - Atger_PNAS_2015
+    - Weger_CellMetab_2019
+    - astafev_2024
+    - mekbib_2022
 Species: mm10
 Promoterome: '~/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff'
 GenomeFiles:

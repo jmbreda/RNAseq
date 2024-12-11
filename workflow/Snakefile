@@ -14,8 +14,10 @@ import pandas as pd
 
 #configfile: "config/config.yaml"
 #configfile: "config/Zhang_PNAS_2014.yml"
-configfile: "config/Atger_PNAS_2015.yml"
+#configfile: "config/Atger_PNAS_2015.yml"
 #configfile: "config/Weger_CellMetab_2019.yml"
+#configfile: "config/astafev_2024.yml"
+configfile: "config/mekbib_2022.yml"
 
 def get_acc_list(dataset):
     infile = "resources/"+dataset+"/SRR_Acc_List.txt"
@@ -27,6 +29,19 @@ def get_sample_name(dataset):
     infile = "resources/"+dataset+"/SRR_per_SampleName.txt"
     with open(infile, 'r') as f:
         sample_name = [l.split('\t')[0] for l in f.read().splitlines()[1:]]
+    return sample_name
+
+def get_sample_WT_CTRL(dataset):
+    sample_name = get_sample_name(dataset)
+
+    # select only samples with circadian time and to treatment (CTRL)
+    if dataset == 'Weger_CellMetab_2019':    
+        sample_name = [s for s in sample_name if s[:3]=='CTR']
+        
+    # select only samples with circadian time and to treatment (WT_AL)
+    if dataset == 'Atger_PNAS_2015':
+        sample_name = [s for s in sample_name if s[:5]=='WT_AL']
+
     return sample_name
 
 def get_srr_list(wildcards):
@@ -47,8 +62,8 @@ rule all:
         #expand("resources/genome/{spec}/transcripts.idx",spec=config['Species']),
         # map (jed)
         #expand("results/{dataset}/kallisto/{sample_name}/abundance.tsv", dataset=config['Name'], sample_name=get_sample_name(config['Name'])),
-        expand("results/{dataset}/kallisto/premrna_tpm_table.tab",dataset=config['Name']),
-        expand("results/{dataset}/kallisto/mrna_tpm_table.tab",dataset=config['Name']),
+        #expand("results/{dataset}/kallisto/premrna_tpm_table.tab",dataset=config['Name']),
+        #expand("results/{dataset}/kallisto/mrna_tpm_table.tab",dataset=config['Name']),
         expand("results/{dataset}/kallisto/promoter_premrna_table.tab",dataset=config['Name']),
         expand("results/{dataset}/kallisto/promoter_mrna_table.tab",dataset=config['Name']),
         #
@@ -58,24 +73,26 @@ rule all:
         #expand("results/counting/{sample_name}/ie_ol.tsv", sample_name=get_sample_name(config['Name']))
         #
         #expand("results/promoterome/{spec}/promid_transcripts.txt", spec=config['Species']),
+        #expand("resources/{dataset}/file_list.txt",dataset=config['Name'])
         #expand("log/{dataset}/ismara/ismara_upload.out",dataset=config['Name'])
 
 
 
 ##-----------------------------------------------##
 ##   Concatenate SRR and rename by sample name   ##
-###-----------------------------------------------##
+##-----------------------------------------------##
 
 rule concatenate_rename:
     input:
         infolder="resources/{dataset}/fastq",
-        srr_list=get_srr_list
+    params:
+        srr_list = lambda wildcards: get_srr_list(wildcards),
     output:
         fq1="resources/{dataset}/fastq/{sample_name}_R1.fastq.gz",
         fq2="resources/{dataset}/fastq/{sample_name}_R2.fastq.gz"
     shell:
         """
-        python scripts/concatenate.py --SampleName {wildcards.sample_name} --srr_list {input.srr_list} --infolder {input.infolder} --fq1 {output.fq1} --fq2 {output.fq2}
+        python scripts/concatenate.py --SampleName {wildcards.sample_name} --srr_list {params.srr_list} --infolder {input.infolder} --fq1 {output.fq1} --fq2 {output.fq2}
         """
 
 ##-------------------------##
@@ -84,7 +101,7 @@ rule concatenate_rename:
 
 rule make_file_list:
     input:
-        expand("resources/{dataset}/fastq/{sample_name}_{paired_reads}.fastq.gz",dataset=config['Name'],sample_name=get_sample_name(config['Name']),paired_reads=['R1','R2'])
+        expand("resources/{dataset}/fastq/{sample_name}_{paired_reads}.fastq.gz",dataset=config['Name'],sample_name=get_sample_WT_CTRL(config['Name']),paired_reads=['R1','R2'])
     output:
         file_list="resources/{dataset}/file_list.txt"
     shell:

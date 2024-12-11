@@ -37,42 +37,45 @@ if __name__ == '__main__':
     #my_dict = promid_transcripts.set_index('transcript').to_dict()
     my_dict = dict(zip(promid_transcripts.transcript.values, promid_transcripts.prom.values))
 
-    # Read in kallisto tpm tables
-    premrna = pd.read_csv(args.premrna, sep='\t', index_col=0)
-    mrna = pd.read_csv(args.mrna, sep='\t', index_col=0)
-    
-    # get transcript ids as index
-    premrna.index = [id.split('::')[0].split('_')[1] for id in premrna.index]
-    mrna.index = [id.split('|')[0] for id in mrna.index]
-    premrna.index = premrna.index.map(remove_version)
-    mrna.index = mrna.index.map(remove_version)
-    assert np.all(premrna.index == mrna.index)
+    # Read in kallisto tpm tables and get transcript ids as index
+    tables = {}
+    tables['premrna'] = pd.read_csv(args.premrna, sep='\t', index_col=0)
+    tables['premrna'].index = [id.split('::')[0].split('_')[1] for id in tables['premrna'].index]
+    tables['premrna'].index = tables['premrna'].index.map(remove_version)
 
-    # check if how many transcripts are in the promoterome
-    idx_in = np.array([id in my_dict for id in premrna.index])
-    print('Fraction of transcripts in promoterome: ', np.sum(idx_in)/premrna.shape[0])
-    
-    # map to promoter and remove transcripts not in promoterome
-    premrna.loc[:,'prom'] = premrna.index.map(my_dict)
-    mrna.loc[:,'prom'] = mrna.index.map(my_dict)
-    premrna = premrna.loc[idx_in,:]
-    mrna = mrna.loc[idx_in,:]
+    tables['mrna'] = pd.read_csv(args.mrna, sep='\t', index_col=0)
+    tables['mrna'].index = [id.split('|')[0] for id in tables['mrna'].index]
+    tables['mrna'].index = tables['mrna'].index.map(remove_version)
 
-    # rename promoter (remove species and version number)
-    def rename_prom(p):
-        return '_'.join(p.split('_')[2:])
-    premrna.loc[:,'prom'] = premrna.loc[:,'prom'].map(rename_prom)
-    mrna.loc[:,'prom'] = mrna.loc[:,'prom'].map(rename_prom)
+    #assert np.all(premrna.index == mrna.index)
 
-    # sum same promoter
-    premrna = premrna.groupby('prom').sum()
-    mrna = mrna.groupby('prom').sum()
+    for key in tables:
+        print(key, tables[key].shape)
 
-    # Count fraction of count mapped to promoter
-    print('Fraction of count mapped to promoter: ', ( premrna.values.sum() + mrna.values.sum() )/( premrna.shape[1]*1e6 ) )
+        # keep total count
+        n_tot = tables[key].values.sum()
+
+        # check if how many transcripts are in the promoterome
+        idx_in = np.array([id in my_dict for id in tables[key].index])
+        print('Fraction of transcripts in promoterome: ', np.sum(idx_in)/tables[key].shape[0])
+        
+        # map to promoter and remove transcripts not in promoterome
+        tables[key].loc[:,'prom'] = tables[key].index.map(my_dict)
+        tables[key] = tables[key].loc[idx_in,:]
+
+        # rename promoter (remove species and version number)
+        def rename_prom(p):
+            return '_'.join(p.split('_')[2:])
+        tables[key].loc[:,'prom'] = tables[key].loc[:,'prom'].map(rename_prom)
+
+        # sum same promoter
+        tables[key] = tables[key].groupby('prom').sum()
+
+        # Count fraction of count mapped to promoter
+        print('Fraction of count mapped to promoter: ', tables[key].values.sum()/n_tot )
 
     # save to file
-    premrna.to_csv(args.output_premrna, sep='\t')
-    mrna.to_csv(args.output_mrna, sep='\t')
+    tables['premrna'].to_csv(args.output_premrna, sep='\t')
+    tables['mrna'].to_csv(args.output_mrna, sep='\t')
 
 
