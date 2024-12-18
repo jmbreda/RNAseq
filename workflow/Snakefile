@@ -59,18 +59,13 @@ rule all:
         # get genome annotation
         #expand("resources/genome/{spec}/{file}",spec=config['Species'],file=config['GenomeFiles']),
         #expand("resources/genome/{spec}/ensembl.gtf.{splicing}.final.bed",spec=config['Species'],splicing=['introns','exons','genes']),
-        #expand("resources/genome/{spec}/transcripts.idx",spec=config['Species']),
+        expand("resources/genome/{spec}/premrna.mrna.{transcriptome}.idx",spec=config['Species'],transcriptome=config['Transcriptome']),
         # map (jed)
         #expand("results/{dataset}/kallisto/{sample_name}/abundance.tsv", dataset=config['Name'], sample_name=get_sample_name(config['Name'])),
         #expand("results/{dataset}/kallisto/premrna_tpm_table.tab",dataset=config['Name']),
         #expand("results/{dataset}/kallisto/mrna_tpm_table.tab",dataset=config['Name']),
-        expand("results/{dataset}/kallisto/promoter_premrna_table.tab",dataset=config['Name']),
-        expand("results/{dataset}/kallisto/promoter_mrna_table.tab",dataset=config['Name']),
-        #
-        #expand("resources/genome/{spec}/star_index/", spec=config['SPECIES']),
-        #expand("results/star/{sample_name}/Aligned.sortedByCoord.out.bam", sample_name=get_sample_name(config['Name']))
-        #expand("results/star/{sample_name}/Aligned.sortedByCoord.out.bam.bai", sample_name=get_sample_name(config['Name']))
-        #expand("results/counting/{sample_name}/ie_ol.tsv", sample_name=get_sample_name(config['Name']))
+        #expand("results/{dataset}/kallisto/promoter_premrna_table.tab",dataset=config['Name']),
+        #expand("results/{dataset}/kallisto/promoter_mrna_table.tab",dataset=config['Name']),
         #
         #expand("results/promoterome/{spec}/promid_transcripts.txt", spec=config['Species']),
         #expand("resources/{dataset}/file_list.txt",dataset=config['Name'])
@@ -159,62 +154,55 @@ rule download_ensembl_genome:
         wget -O {output}.gz {params.url}
         gunzip {output}.gz
         """
-    
-##--------------------------------------##
-##  Make exon-intron annotation         ##
-##--------------------------------------##
 
-rule make_annot:
-    input:
-        gtf = "resources/genome/{spec}/gene_annotation.gtf"
-    output:
-        intron = "resources/genome/{spec}/ensembl.gtf.introns.final.bed",
-        exon = "resources/genome/{spec}/ensembl.gtf.exons.final.bed",
-        gene = "resources/genome/{spec}/ensembl.gtf.genes.final.bed"
-    shell:
-        """
-        ml gcc/11.3.0 bedtools2
-        bash scripts/Make_annot.sh {input.gtf} {output.intron} {output.exon} {output.gene}
-        """
 
 ##-----------------------------------------------------------------##
 ##  Make pre-mRNA/mRNA annotation, kallisto index, kallisto quant  ##
 ##-----------------------------------------------------------------##
 
+rule make_linear_cdna:
+    input:
+        cdna = "resources/genome/{spec}/cdna.fa",
+    output:
+        linear_cdna = "resources/genome/{spec}/cdna.linear.fa"
+    shell:
+        """
+        bash scripts/Make_linear_cdna.sh {input.cdna} {output.linear_cdna}
+        """
+
 rule make_annot_kallisto:
     input:
         gtf = "resources/genome/{spec}/gene_annotation.gtf",
-        cdna = "resources/genome/{spec}/cdna.fa",
+        cdna = "resources/genome/{spec}/cdna.linear.fa",
         genome = "resources/genome/{spec}/genome.fa"
     output:
-        cdna = "resources/genome/{spec}/cdna.kallisto.fa"
+        cdna = "resources/genome/{spec}/premrna.mrna.{transcriptome}.fa"
     shell:
         """
         ml gcc/11.3.0 bedtools2
-        bash scripts/Make_annot_kallisto.sh {input.gtf} {input.cdna} {input.genome} {output.cdna}
+        bash scripts/Make_annot_kallisto.sh {input.gtf} {input.cdna} {input.genome} {output.cdna} {wildcards.transcriptome}
         """
 
-rule run_index_kallisto:
+rule kallisto_index:
     input:
-        cdna = "resources/genome/{spec}/cdna.kallisto.fa"
+        cdna = "resources/genome/{spec}/premrna.mrna.{transcriptome}.fa"
     output: 
-        kal_index = "resources/genome/{spec}/transcripts.idx"
+        index = "resources/genome/{spec}/premrna.mrna.{transcriptome}.idx"
     shell:
         """
         ml gcc/11.3.0 kallisto
-        kallisto index -i {output.kal_index} {input.cdna}
+        kallisto index -i {output.index} {input.cdna}
         """
 
 rule kallisto_quant:
     input:
-        index='resources/genome/{spec}/transcripts.idx'.format(spec=config['Species']),
-        fq1='resources/{dataset}/fastq/{sample_name}_R1.fastq.gz',
-        fq2='resources/{dataset}/fastq/{sample_name}_R2.fastq.gz'
+        index="resources/genome/{spec}/premrna.mrna.{transcriptome}.idx",
+        fq1="resources/{dataset}/fastq/{sample_name}_R1.fastq.gz",
+        fq2="resources/{dataset}/fastq/{sample_name}_R2.fastq.gz"
     output:
-        counts="results/{dataset}/kallisto/{sample_name}/abundance.tsv"
+        counts="results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}/abundance.tsv"
     params:
-        dir=directory("results/{dataset}/kallisto/{sample_name}"),
-        gtf='resources/genome/'+config['Species']+'/gene_annotation.gtf'
+        dir=directory("results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}")
     threads: 72
     shell:
         """
@@ -228,8 +216,12 @@ rule kallisto_quant:
                  -t {threads} \
                  {input.fq1} {input.fq2}
         """
-                 #--genomebam \
-                 #--gtf {params.gtf} \
+
+
+
+##-----------------------------------------------------##
+##  Make TPM and promoter tables from kallisto output  ##
+##-----------------------------------------------------##
 
 rule make_tpm_tables:
     input:
@@ -264,7 +256,24 @@ rule map_transcript_to_promoter:
         """
         python scripts/get_transcript_to_promoter.py --promid_transcripts {input.promid_transcripts} --premrna {input.premrna} --mrna {input.mrna} --output_premrna {output.prom_premrna} --output_mrna {output.prom_mrna}
         """
+    
+##--------------------------------------##
+##  Make exon-intron annotation         ##
+##--------------------------------------##
 
+#rule make_annot:
+#    input:
+#        gtf = "resources/genome/{spec}/gene_annotation.gtf"
+#    output:
+#        intron = "resources/genome/{spec}/ensembl.gtf.introns.final.bed",
+#        exon = "resources/genome/{spec}/ensembl.gtf.exons.final.bed",
+#        gene = "resources/genome/{spec}/ensembl.gtf.genes.final.bed"
+#    shell:
+#        """
+#        ml gcc/11.3.0 bedtools2
+#        bash scripts/Make_annot.sh {input.gtf} {output.intron} {output.exon} {output.gene}
+#        """
+#
 ##--------------------------------------------------------------##
 ##  Generate STAR genome index, align, index, make count table  ##
 ##--------------------------------------------------------------##
