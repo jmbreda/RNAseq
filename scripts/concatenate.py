@@ -4,10 +4,6 @@ import os
 
 def parse_argument():
     parser = argparse.ArgumentParser(description='Get SRR, SampleName table from SRA metadata and GSMID_SampleName table.')
-    parser.add_argument('--SampleName'
-        ,required=True
-        ,type=str
-        ,help="Sample name")
     parser.add_argument('--srr_list'
         ,required=True
         ,type=str
@@ -44,17 +40,16 @@ if __name__ == '__main__':
                 bashCommand = "mv " + args.infolder + '/' + srr_list[0] + '_2.fastq.gz ' + args.fq2
                 output = os.system(bashCommand)
                 print(output)
-
-
-    # concatenate fastq files
-    if not os.path.exists(args.fq1):
-        bashCommand = "cat " + ' '.join([args.infolder + '/' + srr + '_1.fastq.gz' for srr in srr_list]) + " > " + args.fq1
-        output = os.system(bashCommand)
-        print(output)
-
-    # concatenate fastq files for R2 if exists
-    if args.fq2:
-        if not os.path.exists(args.fq2):
-            bashCommand = "cat " + ' '.join([args.infolder + '/' + srr + '_2.fastq.gz' for srr in srr_list]) + " > " + args.fq2
+    # otherwise concatenate the files and rename
+    else:
+        # concatenate fastq files
+        if not os.path.exists(args.fq1):
+            bashCommand = "cat " + ' '.join([args.infolder + '/' + srr + '_1.fastq.gz' for srr in srr_list]) + " > " + args.fq1
             output = os.system(bashCommand)
             print(output)
+        # concatenate fastq files for R2 if exists
+        if args.fq2:
+            if not os.path.exists(args.fq2):
+                bashCommand = "cat " + ' '.join([args.infolder + '/' + srr + '_2.fastq.gz' for srr in srr_list]) + " > " + args.fq2
+                output = os.system(bashCommand)
+                print(output)
