@@ -13,11 +13,11 @@ import os
 import pandas as pd
 
 #configfile: "config/config.yaml"
-#configfile: "config/Zhang_PNAS_2014.yml"
+configfile: "config/Zhang_PNAS_2014.yml"
 #configfile: "config/Atger_PNAS_2015.yml"
 #configfile: "config/Weger_CellMetab_2019.yml"
 #configfile: "config/astafev_2024.yml"
-configfile: "config/mekbib_2022.yml"
+#configfile: "config/mekbib_2022.yml"
 
 def get_acc_list(dataset):
     infile = "resources/"+dataset+"/SRR_Acc_List.txt"
@@ -51,6 +51,14 @@ def get_srr_list(wildcards):
     
     return srr_list
 
+# constants
+wildcard_constraints:
+    dataset = config['Name'],
+    spec = config['Species'],
+    sample = '|'.join(get_acc_list(config['Name'])),
+    sample_name = '|'.join(get_sample_name(config['Name'])),
+    transcriptome = '|'.join(config['Transcriptome'])
+
 rule all:
     input:
         # get data
@@ -59,13 +67,13 @@ rule all:
         # get genome annotation
         #expand("resources/genome/{spec}/{file}",spec=config['Species'],file=config['GenomeFiles']),
         #expand("resources/genome/{spec}/ensembl.gtf.{splicing}.final.bed",spec=config['Species'],splicing=['introns','exons','genes']),
-        expand("resources/genome/{spec}/premrna.mrna.{transcriptome}.idx",spec=config['Species'],transcriptome=config['Transcriptome']),
-        # map (jed)
-        #expand("results/{dataset}/kallisto/{sample_name}/abundance.tsv", dataset=config['Name'], sample_name=get_sample_name(config['Name'])),
-        #expand("results/{dataset}/kallisto/premrna_tpm_table.tab",dataset=config['Name']),
-        #expand("results/{dataset}/kallisto/mrna_tpm_table.tab",dataset=config['Name']),
-        #expand("results/{dataset}/kallisto/promoter_premrna_table.tab",dataset=config['Name']),
-        #expand("results/{dataset}/kallisto/promoter_mrna_table.tab",dataset=config['Name']),
+        #expand("resources/genome/{spec}/premrna.mrna.{transcriptome}.idx",spec=config['Species'],transcriptome=config['Transcriptome']),
+        # map
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}/abundance.tsv", dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome'], sample_name=get_sample_name(config['Name'])),
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_premrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_mrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
         #
         #expand("results/promoterome/{spec}/promid_transcripts.txt", spec=config['Species']),
         #expand("resources/{dataset}/file_list.txt",dataset=config['Name'])
@@ -78,16 +86,15 @@ rule all:
 ##-----------------------------------------------##
 
 rule concatenate_rename:
-    input:
-        infolder="resources/{dataset}/fastq",
     params:
         srr_list = lambda wildcards: get_srr_list(wildcards),
+        infolder="resources/{dataset}/fastq",
     output:
         fq1="resources/{dataset}/fastq/{sample_name}_R1.fastq.gz",
         fq2="resources/{dataset}/fastq/{sample_name}_R2.fastq.gz"
     shell:
         """
-        python scripts/concatenate.py --SampleName {wildcards.sample_name} --srr_list {params.srr_list} --infolder {input.infolder} --fq1 {output.fq1} --fq2 {output.fq2}
+        python scripts/concatenate.py --srr_list {params.srr_list} --infolder {params.infolder} --fq1 {output.fq1} --fq2 {output.fq2}
         """
 
 ##-------------------------##
@@ -217,18 +224,16 @@ rule kallisto_quant:
                  {input.fq1} {input.fq2}
         """
 
-
-
 ##-----------------------------------------------------##
 ##  Make TPM and promoter tables from kallisto output  ##
 ##-----------------------------------------------------##
 
 rule make_tpm_tables:
     input:
-        expand('results/{{dataset}}/kallisto/{sample_name}/abundance.tsv', sample_name=get_sample_name(config['Name']))
+        expand('results/{{dataset}}/kallisto/{{spec}}_{{transcriptome}}/{sample_name}/abundance.tsv', sample_name=get_sample_name(config['Name']))
     output:
-        premrna='results/{dataset}/kallisto/premrna_tpm_table.tab',
-        mrna='results/{dataset}/kallisto/mrna_tpm_table.tab'
+        premrna='results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab',
+        mrna='results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab'
     shell:
         """
         python scripts/make_tpm_table.py --intables {input} --out_premrna {output.premrna} --out_mrna {output.mrna}
@@ -247,11 +252,11 @@ rule make_promid_transcripts:
 rule map_transcript_to_promoter:
     input:
         promid_transcripts="results/promoterome/{spec}/promid_transcripts.txt".format(spec=config['Species']),
-        premrna="results/{dataset}/kallisto/premrna_tpm_table.tab",
-        mrna="results/{dataset}/kallisto/mrna_tpm_table.tab"
+        premrna="results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab",
+        mrna="results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab"
     output:
-        prom_premrna='results/{dataset}/kallisto/promoter_premrna_table.tab',
-        prom_mrna='results/{dataset}/kallisto/promoter_mrna_table.tab'
+        prom_premrna='results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_premrna_table.tab',
+        prom_mrna='results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_mrna_table.tab'
     shell:
         """
         python scripts/get_transcript_to_promoter.py --promid_transcripts {input.promid_transcripts} --premrna {input.premrna} --mrna {input.mrna} --output_premrna {output.prom_premrna} --output_mrna {output.prom_mrna}
