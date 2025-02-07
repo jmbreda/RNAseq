@@ -10,8 +10,8 @@ for dataset in config['Datasets']:
 
 rule all:
     input:
-        #expand("results/{dataset}/fastq/{sample}.out", dataset=config['Dataset'], sample=Samples[config['Dataset'][0]])
-        expand("resources/{dataset}/SRR_per_SampleName.txt", dataset=config['Datasets'])
+        expand("results/{dataset}/fastq/{sample}.out", dataset=config['Dataset'], sample=Samples[config['Dataset'][0]])
+        #expand("resources/{dataset}/SRR_per_SampleName.txt", dataset=config['Datasets'])
 
 
 ##-------------------------##
