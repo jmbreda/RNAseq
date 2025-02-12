@@ -12,6 +12,13 @@
         "cpus-per-task" : 1
     },
 
+    "download_fastq" :
+    {
+        "time" : "24:00:00",
+        "cpus-per-task" : 12,
+        "mem" : "72G"
+    },
+
     "kallisto_index" :
     {
         "time" : "24:00:00",

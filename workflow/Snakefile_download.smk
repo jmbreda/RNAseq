@@ -2,16 +2,14 @@
 
 import pandas as pd
 
-configfile: 'config/config.yaml'
-
-Samples = {}
-for dataset in config['Datasets']:
-    Samples[dataset] = pd.read_csv("resources/"+dataset+"/SRR_Acc_List.txt", sep="\t", header=None)
+configfile: 'config/Koike_Science_2012.yml'
+dataset = config['Name']
+Samples = pd.read_csv("resources/"+dataset+"/SRR_Acc_List.txt", sep="\t", header=None)[0]
 
 rule all:
     input:
-        expand("results/{dataset}/fastq/{sample}.out", dataset=config['Dataset'], sample=Samples[config['Dataset'][0]])
-        #expand("resources/{dataset}/SRR_per_SampleName.txt", dataset=config['Datasets'])
+        expand("log/"+dataset+"/fasterq-dump/{sample}.done", sample=Samples),
+        #"resources/"+dataset+"/SRR_per_SampleName.txt"
 
 
 ##-------------------------##
@@ -20,16 +18,17 @@ rule all:
 
 rule download_fastq:
     input:
-        acc_list = "resources/{dataset}/SRR_Acc_List.txt"
+        acc_list = "resources/"+dataset+"/SRR_Acc_List.txt"
     output:
-        stdout="log/{dataset}/fasterq-dump/{sample}.out"
+        done="log/"+dataset+"/fasterq-dump/{sample}.done"
     params:
-        outfold="resources/{dataset}/fastq",
-        stderr="log/{dataset}/fasterq-dump/{sample}.err"
+        outfold="resources/"+dataset+"/fastq",
+        mem="72000MB"
     threads: 12
     shell:
         """
-        fasterq-dump {wildcards.sample} --outdir {params.outfold} --temp tmp --threads {threads} --mem 10000MB 1> {output.stdout} 2> {params.stderr}
+        fasterq-dump {wildcards.sample} --outdir {params.outfold} --temp tmp --threads {threads} --mem {params.mem}
+        touch {output.done}
         """
 
 ##-------------------------##
@@ -38,10 +37,10 @@ rule download_fastq:
 
 rule srr_sample_table:
     input:
-        srarun="resources/{dataset}/SraRunTable.txt",
-        gsm_sample="resources/{dataset}/GSMID_SampleName.txt"
+        srarun="resources/"+dataset+"/SraRunTable.txt",
+        gsm_sample="resources/"+dataset+"/GSMID_SampleName.txt"
     output:
-        "resources/{dataset}/SRR_per_SampleName.txt"
+        "resources/"+dataset+"/SRR_per_SampleName.txt"
     shell:
         """
         python scripts/get_SRR_SampleName.py --SraRunTable {input.srarun} --GSMID_SampleName {input.gsm_sample} --outfile {output}
