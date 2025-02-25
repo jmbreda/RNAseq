@@ -10,6 +10,6 @@ URLs:
     genome: "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/GRCm38.primary_assembly.genome.fa.gz"
     cDNA:   "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.transcripts.fa.gz"
 Transcriptome:
-    - selected_transcripts
     - all_transcripts
+    - selected_transcripts
          

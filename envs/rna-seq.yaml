@@ -3,6 +3,7 @@ channels:
     - conda-forge
     - bioconda
     - defaults
+    - biobuilds
 dependencies:
     - snakemake=7.32
     - matplotlib
@@ -13,3 +14,4 @@ dependencies:
     - samtools
     - matplotlib_venn
     - sra-tools
+    - bfast

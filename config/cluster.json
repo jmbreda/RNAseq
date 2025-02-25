@@ -4,7 +4,7 @@
         "qos" : "serial",
         "stdout" : "stdout/slurm-%x-%j",
         "stderr" : "stderr/slurm-%x-%j",
-        "time" : "01:00:00",
+        "time" : "06:00:00",
         "n" : 1,
         "mem" : "6G",
         "nodes" : 1,
@@ -19,17 +19,69 @@
         "mem" : "72G"
     },
 
+    "csfastq_to_fastq" :
+    {
+        "time" : "12:00:00",
+        "cpus-per-task" : 1,
+        "mem" : "6G"
+    },
+    
+    "star_index" :
+    {
+        "time" : "24:00:00",
+        "cpus-per-task" : 24,
+        "mem" : "160G"
+    },
+
+    "star_align" :
+    {
+        "time" : "24:00:00",
+        "cpus-per-task" : 24,
+        "mem" : "160G"
+    },
+
     "kallisto_index" :
     {
         "time" : "24:00:00",
-        "cpus-per-task" : 1,
-        "mem" : "200G"
+        "cpus-per-task" : 24,
+        "mem" : "160G"
     },
 
     "kallisto_quant" :
     {
         "time" : "12:00:00",
-        "cpus-per-task" : 72,
-        "mem" : "200G"
+        "cpus-per-task" : 24,
+        "mem" : "160G"
+    },
+
+    "bwa_index" :
+    {
+        "time" : "24:00:00",
+        "cpus-per-task" : 1,
+        "mem" : "6G"
+    },
+
+    "bwa_aln_se" :
+    {
+        "name" : "bwa_aln_se",
+        "time" : "24:00:00",
+        "cpus-per-task" : 12,
+        "mem" : "80G"
+    },
+
+    "bwa_samse" :
+    {
+        "name" : "bwa_samse",
+        "time" : "48:00:00",
+        "cpus-per-task" : 3,
+        "mem" : "20G"
+    },
+
+    "mapped_uniq_MAPQ_sorted_se" :
+    {
+        "name" : "mapped_uniq_MAPQ_se",
+        "time" : "12:00:00",
+        "cpus-per-task" : 13,
+        "mem" : "80G"
     }
 }

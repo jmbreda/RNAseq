@@ -1,5 +1,5 @@
 #!/bin/bash
-snakemake -s workflow/Snakefile_download.smk \
+snakemake -s workflow/Snakefile \
           -j 999 \
           --cluster-config config/cluster.json \
           --cluster "sbatch --job-name {rule} \

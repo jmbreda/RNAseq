@@ -2,9 +2,8 @@
 
 # Prior to running the pipeline, the following files need to be prepared:
 # SraRunTable.txt
-# SRR_Acc_List.txt
 # GSMID_SampleName.txt
-# -> SRR_per_SampleName.txt generated with workflow/Snakefile_download.smk
+# -> SRR_per_SampleName.txt generated with scripts/get_SRR_per_SampleName.sh
 
 # slurm submission: 
 # snakemake -s workflow/Snakefile -j 999 --cluster-config config/cluster.json --cluster "sbatch --job-name {cluster.name} --output {cluster.stdout} --error {cluster.stderr} --qos {cluster.qos} --time {cluster.time} --mem {cluster.mem} --nodes {cluster.nodes} --ntasks {cluster.ntasks} --cpus-per-task {cluster.cpus-per-task}"
@@ -13,16 +12,19 @@ import os
 import pandas as pd
 
 #configfile: "config/config.yaml"
-configfile: "config/Zhang_PNAS_2014.yml"
+#configfile: "config/Zhang_PNAS_2014.yml"
 #configfile: "config/Atger_PNAS_2015.yml"
-#configfile: "config/Weger_CellMetab_2019.yml"
+configfile: "config/Weger_CellMetab_2019.yml"
 #configfile: "config/astafev_2024.yml"
 #configfile: "config/mekbib_2022.yml"
+#configfile: "config/anderson_2023.yml"
+
+dataset = config['Name']
 
 def get_acc_list(dataset):
-    infile = "resources/"+dataset+"/SRR_Acc_List.txt"
+    infile = "resources/"+dataset+"/SraRunTable.txt"
     with open(infile, 'r') as f:
-        acc_list = f.read().splitlines()
+        acc_list = [l.strip().split(',')[0] for l in f.read().splitlines()[1:]]
     return acc_list
 
 def get_sample_name(dataset):
@@ -59,19 +61,25 @@ wildcard_constraints:
     sample_name = '|'.join(get_sample_name(config['Name'])),
     transcriptome = '|'.join(config['Transcriptome'])
 
+for s in get_sample_name(config['Name']):
+    print(s)
+
+
 rule all:
     input:
         # get data
         #expand("log/{dataset}/fasterq-dump/{sample}.out", dataset=config['Name'], sample=get_acc_list(config['Name'])),
-        #expand("resources/{dataset}/fastq/{sample_name}_{r}.fastq.gz",dataset=config['Name'],sample_name=get_sample_name(config['Name']),r=['R1','R2']),
+        expand("resources/{dataset}/fastq/{sample_name}_{r}.fastq.gz",dataset=config['Name'],sample_name=get_sample_name(config['Name']),r=['R1','R2']),
         # get genome annotation
         #expand("resources/genome/{spec}/{file}",spec=config['Species'],file=config['GenomeFiles']),
         #expand("resources/genome/{spec}/ensembl.gtf.{splicing}.final.bed",spec=config['Species'],splicing=['introns','exons','genes']),
         #expand("resources/genome/{spec}/premrna.mrna.{transcriptome}.idx",spec=config['Species'],transcriptome=config['Transcriptome']),
-        # map
+        #
+        # map to transcriptome with kallisto
+        #
         #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}/abundance.tsv", dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome'], sample_name=get_sample_name(config['Name'])),
-        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
-        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
         expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_premrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
         expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_mrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
         #
@@ -103,7 +111,7 @@ rule concatenate_rename:
 
 rule make_file_list:
     input:
-        expand("resources/{dataset}/fastq/{sample_name}_{paired_reads}.fastq.gz",dataset=config['Name'],sample_name=get_sample_WT_CTRL(config['Name']),paired_reads=['R1','R2'])
+        expand("resources/{dataset}/fastq/{sample_name}_{paired_reads}.fastq.gz",dataset=config['Name'],sample_name=get_sample_name(config['Name']),paired_reads=['R1','R2'])
     output:
         file_list="resources/{dataset}/file_list.txt"
     shell:
@@ -195,6 +203,7 @@ rule kallisto_index:
         cdna = "resources/genome/{spec}/premrna.mrna.{transcriptome}.fa"
     output: 
         index = "resources/genome/{spec}/premrna.mrna.{transcriptome}.idx"
+    threads: 24
     shell:
         """
         ml gcc/11.3.0 kallisto
@@ -210,7 +219,7 @@ rule kallisto_quant:
         counts="results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}/abundance.tsv"
     params:
         dir=directory("results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}")
-    threads: 72
+    threads: 24
     shell:
         """
         module load gcc/11.3.0 kallisto
@@ -236,7 +245,7 @@ rule make_tpm_tables:
         mrna='results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab'
     shell:
         """
-        python scripts/make_tpm_table.py --intables {input} --out_premrna {output.premrna} --out_mrna {output.mrna}
+        python scripts/make_tpm_premrna_mrna_tables.py --intables {input} --out_premrna {output.premrna} --out_mrna {output.mrna}
         """
 
 rule make_promid_transcripts:
@@ -282,15 +291,16 @@ rule map_transcript_to_promoter:
 ##--------------------------------------------------------------##
 ##  Generate STAR genome index, align, index, make count table  ##
 ##--------------------------------------------------------------##
-
-#rule star_genome_index:
+#
+#rule star_index:
 #    input:
 #        genome = "resources/genome/{spec}/genome.fa",
 #        gtf = "resources/genome/{spec}/gene_annotation.gtf"
 #    output:
-#        genome_dir = directory("resources/genome/{spec}/star_index/")
+#        genome_dir = directory("resources/genome/{spec}/star_index_"+config['ReadLength']+"/")
 #    params:
-#        overhang = 100
+#        overhang = config['ReadLength'] - 1,
+#        mem = 140000000000
 #    threads: 24
 #    shell:
 #        """
@@ -301,14 +311,14 @@ rule map_transcript_to_promoter:
 #             --genomeFastaFiles {input.genome} \
 #             --sjdbGTFfile {input.gtf} \
 #             --sjdbOverhang {params.overhang} \
-#             --limitGenomeGenerateRAM 81000000000 \
+#             --limitGenomeGenerateRAM {params.mem} \
 #             --runThreadN {threads}
 #        """
 #
 #rule star_align:
 #    input:
-#        fq1='resources/{dataset}/fastq/{sample}_1.fastq.gz',
-#        fq2='resources/{dataset}/fastq/{sample}_2.fastq.gz',
+#        fq1='resources/{dataset}/fastq/{sample}.fastq.gz',
+#        #fq2='resources/{dataset}/fastq/{sample}_2.fastq.gz',
 #        gtf = "resources/genome/{spec}/gene_annotation.gtf",
 #        genome_dir = "resources/genome/{spec}/star_index/"
 #    output:

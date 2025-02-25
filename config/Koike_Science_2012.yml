@@ -9,6 +9,12 @@ URLs:
     gtf:    "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.primary_assembly.annotation.gtf.gz"
     genome: "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/GRCm38.primary_assembly.genome.fa.gz"
     cDNA:   "ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M23/gencode.vM23.transcripts.fa.gz"
-Transcriptome:
-    - selected_transcripts
-    - all_transcripts
+ReadLength: 50
+Strand:
+    - forward
+    - reverse
+bwa:
+    MAPQ_min: 10 # Minimum MAPQ score for reads to be considered (Phred-scaled)
+    mem: "6G" # Memory for samtools sort
+kallisto:
+    fragment_length_sd: 5
