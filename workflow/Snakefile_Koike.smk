@@ -24,6 +24,9 @@ def get_SampleNames(dataset=config['Name']):
 wildcard_constraints:
     spec = config['Species'],
     sample = '|'.join(get_SampleNames())+'|test',
+    strand = '|'.join(config['Strand']),
+    chr = '|'.join(config['Chromosomes']),
+    bin_size = '|'.join([str(b) for b in config['BinSize'] ])
 
 rule all:
     input:
@@ -32,16 +35,23 @@ rule all:
         #expand("resources/genome/{spec}/ensembl.gtf.{splicing}.final.bed",spec=config['Species'],splicing=['introns','exons','genes']),
         #expand("resources/genome/{spec}/premrna.mrna.{transcriptome}.idx",spec=config['Species'],transcriptome=config['Transcriptome']),
         #
+        # translate csfastq to fastq
+        #expand("resources/{dataset}/fastq/{sample}.fastq.gz",dataset=config['Name'],sample=get_SampleNames()),
+        #
+        # map to genome with bwa
+        #expand("results/{dataset}/bwa/coverage/{sample}_{strand}.bedgraph",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand']),
+        #expand("results/{dataset}/bwa/norm_coverage/{sample}_{strand}.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand']),
+        #expand("results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand'],bin_size=config['BinSize']),
+        #expand("results/{dataset}/bwa/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand'],bin_size=config['BinSize']),
+        expand("results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_bin{bin_size}bp.csv",dataset=config['Name'],bin_size=config['BinSize'])
+        #
+        # map to transcriptome with kallisto
+        #expand('results/{dataset}/kallisto/mrna_tpm_table.tab',dataset=config['Name']),
+        #
         # map to genome with STAR
         #"results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam".format(dataset=config['Name'],sample=get_SampleNames()),
         #"results/Koike_Science_2012/star/liver_CT0/Aligned.sortedByCoord.out.bam",
         #expand("results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam.bai",sample=get_SampleNames(),dataset=config['Name']),
-        #
-        # map to genome with bwa
-        expand("results/{dataset}/bwa/{sample}_{strand}_coverage.bedgraph",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand']),
-        #
-        # map to transcriptome with kallisto
-        #expand('results/{dataset}/kallisto/mrna_tpm_table.tab',dataset=config['Name']),
 
 ##---------------------------------------------------------------------------##
 ##   Download gtf, cDNA (coding transcripts), and DNA from Gencode/Ensembl   ##
@@ -87,9 +97,9 @@ rule chrom_size:
         chrom_size = "resources/genome/{spec}/chrom.sizes"
     shell:
         """
-        if [ ! $(hostname -s) == "haas005" ]; then
-            ml gcc/11.3.0 samtools
-        fi
+        #if [ ! $(hostname -s) == "haas005" ]; then
+        #    ml gcc/11.3.0 samtools
+        #fi
         samtools faidx {input.genome}
         cut -f1,2 {input.genome}.fai > {output.chrom_size}
         """
@@ -106,91 +116,6 @@ rule csfastq_to_fastq:
     shell:
         """
         scripts/csfq2fq.pl <( zcat {input.csfastq} ) | gzip > {output.fastq}
-        """
-
-##------------------------##
-##  STAR : map to genome  ##
-##------------------------##
-
-rule star_index:
-    input:
-        genome = "resources/genome/{spec}/genome.fa",
-        gtf = "resources/genome/{spec}/gene_annotation.gtf"
-    output:
-        genome_dir = directory("resources/genome/{spec}/star_index_{read_length}/")
-    params:
-        overhang = config['ReadLength'] - 1,
-        mem = 160000000000
-    threads: 24
-    shell:
-        """
-        module load gcc/11.3.0 star
-        mkdir -p {output.genome_dir}
-        STAR --runMode genomeGenerate \
-             --genomeDir {output.genome_dir} \
-             --genomeFastaFiles {input.genome} \
-             --sjdbGTFfile {input.gtf} \
-             --sjdbOverhang {params.overhang} \
-             --limitGenomeGenerateRAM {params.mem} \
-             --runThreadN {threads}
-        """
-
-rule star_align:
-    input:
-        fq='resources/{dataset}/fastq/{sample}.fastq.gz',
-        gtf = "resources/genome/{spec}/gene_annotation.gtf".format(spec=config['Species']),
-        genome_dir = "resources/genome/{spec}/star_index_{read_length}".format(spec=config['Species'],read_length=config['ReadLength'])
-    output:
-        bam="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam"
-    params:
-        prefix="results/{dataset}/star/{sample}/",
-        outsamtype = "BAM SortedByCoordinate",
-        mem = 160000000000,
-    threads: 24
-    shell:
-        """
-        module load gcc/11.3.0 star
-        if [ -e {params.prefix}tmp/ ]; then rm -r {params.prefix}tmp/; fi
-        STAR --runMode alignReads \
-             --outFileNamePrefix {params.prefix} \
-             --outTmpDir {params.prefix}tmp/ \
-             --runDirPerm All_RWX \
-             --outSAMtype {params.outsamtype} \
-             --readFilesIn {input.fq} \
-             --readFilesCommand zcat \
-             --genomeDir {input.genome_dir} \
-             --sjdbGTFfile {input.gtf} \
-             --limitBAMsortRAM {params.mem} \
-             --runThreadN {threads}
-        """
-
-rule sam_index:
-    input:
-        bam="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam"
-    output:
-        bam_index="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam.bai"
-    shell:
-        """
-        ml gcc/11.3.0 samtools
-        samtools index {input}
-        """
-
-rule coverage_bedgraph:
-    input:
-        bam="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam",
-        bam_index="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam.bai"
-    output:
-        bg="results/{dataset}/star/{sample}/coverage.bedgraph"
-    params:
-        strand = lambda wildcards: '-' if wildcards.strand == "forward" else '+' if wildcards.strand == "reverse" else '',
-        flag_pe = lambda wildcards: '81' if wildcards.strand == "forward" else '97' if wildcards.strand == "reverse" else '',
-        flag_se = lambda wildcards: '16' if wildcards.strand == "forward" else '0' if wildcards.strand == "reverse" else ''
-    shell:
-        """
-        if [ ! $(hostname -s) == "haas005" ]; then
-            ml gcc/11.3.0 samtools bedtools2
-        fi
-        samtools view -h {input.bam} | awk '$1 ~ /^@/ || $2 == "{params.flag_pe}" || $2 == "{params.flag_se}"' | samtools view -b | bedtools genomecov -ibam stdin -bg -strand {params.strand} -5 | grep "^\<chr" > {output.bg}
         """
 
 ##----------------------##
@@ -270,7 +195,7 @@ rule bwa_coverage_bedgraph:
         bam="results/{dataset}/bwa/{sample}.bam",
         bam_index="results/{dataset}/bwa/{sample}.bam.bai"
     output:
-        bg="results/{dataset}/bwa/{sample}_{strand}_coverage.bedgraph"
+        bg="results/{dataset}/bwa/coverage/{sample}_{strand}.bedgraph"
     params:
         strand = lambda wildcards: '-' if wildcards.strand == "forward" else '+' if wildcards.strand == "reverse" else '',
         flag_pe = lambda wildcards: '81' if wildcards.strand == "forward" else '97' if wildcards.strand == "reverse" else '',
@@ -281,6 +206,146 @@ rule bwa_coverage_bedgraph:
             ml gcc/11.3.0 samtools bedtools2
         fi
         samtools view -h {input.bam} | awk '$1 ~ /^@/ || $2 == "{params.flag_pe}" || $2 == "{params.flag_se}"' | samtools view -b | bedtools genomecov -ibam stdin -bg -strand {params.strand} -5 | grep "^\<chr" > {output.bg}
+        """
+
+rule get_total_count:
+    input:
+        bg="results/{dataset}/bwa/coverage/{sample}_{strand}.bedgraph"
+    output:
+        counts="results/{dataset}/bwa/coverage/{sample}_{strand}_total_counts.txt"
+    shell:
+        """
+        awk '{{sum+=$4}} END {{print sum}}' {input.bg} > {output.counts}
+        """
+
+rule normalize_sort_bedgraph:
+    input:
+        bg="results/{dataset}/bwa/coverage/{sample}_{strand}.bedgraph",
+        total_count="results/{dataset}/bwa/coverage/{sample}_{strand}_total_counts.txt",
+        total_counts=expand("results/{dataset}/bwa/coverage/{sample}_{strand}_total_counts.txt",dataset=config['Name'],sample=get_SampleNames(), strand=config['Strand'])
+    output:
+        norm_bg="results/{dataset}/bwa/norm_coverage/{sample}_{strand}.bedgraph"
+    shell:
+        """
+        ./scripts/normalize_bedgraph.sh {input.bg} {input.total_count} {output.norm_bg} {input.total_counts}
+        """
+
+rule norm_coverage_bw:
+    input:
+        norm_bg="results/{dataset}/bwa/norm_coverage/{sample}_{strand}.bedgraph",
+        chrom_size="resources/genome/{spec}/chrom.sizes".format(spec=config['Species'])
+    output:
+        bw="results/{dataset}/bwa/norm_coverage/{sample}_{strand}.bw"
+    params:
+        tmp_sorted="results/{dataset}/bwa/norm_coverage/{sample}_{strand}.sorted.tmp"
+    shell:
+        """
+        sort -k1,1 -k2,2n {input.norm_bg} > {params.tmp_sorted}
+        bedGraphToBigWig {params.tmp_sorted} {input.chrom_size} {output.bw}
+        rm {params.tmp_sorted}
+        """
+
+rule make_bin_bed:
+    input:
+        chrom_size="resources/genome/{spec}/chrom.sizes".format(spec=config['Species'])
+    output:
+        bed="results/{dataset}/bwa/binned_norm_coverage/bin{bin_size}bp.bed"
+    shell:
+        """
+        python scripts/make_bins.py --chrom_size {input.chrom_size} --bin_size {wildcards.bin_size} --output {output.bed}
+        """
+
+rule bin_coverage:
+    input:
+        bed="results/{dataset}/bwa/norm_coverage/{sample}_{strand}.bedgraph",
+        bins="results/{dataset}/bwa/binned_norm_coverage/bin{bin_size}bp.bed"
+    output:
+        bed="results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bedgraph"
+    resources:
+        tmpdir = lambda wildcards: f"tmpdir/bin_coverage_{wildcards.sample}_{wildcards.strand}_{wildcards.bin_size}.tmp"
+    shell:
+        """
+        if [ ! $(hostname -s) == "haas005" ]; then
+            ml gcc/11.3.0 bedtools2
+        fi
+        bedtools map -a {input.bins} -b {input.bed} -c 4 -o sum -null out | awk '$4 != "out"' > {output.bed}
+        """
+
+rule binned_norm_coverage_bw:
+    input:
+        bed="results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bedgraph",
+        chrom_size="resources/genome/{spec}/chrom.sizes".format(spec=config['Species'])
+    output:
+        bw="results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw"
+    params:
+        tmp_sorted="results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.sorted.tmp"
+    shell:
+        """
+        sort -k1,1 -k2,2n {input.bed} > {params.tmp_sorted}
+        bedGraphToBigWig {params.tmp_sorted} {input.chrom_size} {output.bw}
+        rm {params.tmp_sorted}
+        """
+
+
+rule bin_expression_table:
+    input:
+        bedgraphs=expand("results/{dataset}/bwa/binned_norm_coverage/{sample}_{{strand}}_bin{{bin_size}}bp.bedgraph",dataset=config['Name'],sample=get_SampleNames())
+    output:
+        table=temp("results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_{chr}_{strand}_bin{bin_size}bp.csv")
+    shell:
+        """
+        python scripts/make_expression_table_chr_strand.py --chr {wildcards.chr} \
+                                                           --bedgraphs {input.bedgraphs} \
+                                                           --output {output.table}
+        """
+rule bin_expression_table_merge_strands:
+    input:
+        forward_table="results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_{chr}_forward_bin{bin_size}bp.csv",
+        reverse_table="results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_{chr}_reverse_bin{bin_size}bp.csv"
+    output:
+        table=temp("results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_{chr}_bin{bin_size}bp.csv")
+    shell:
+        """
+        python scripts/make_expression_table_chr.py --forward_table {input.forward_table} \
+                                                    --reverse_table {input.reverse_table} \
+                                                    --output {output.table}
+        """
+rule bin_expression_table_merge_chr:
+    input:
+        tables=expand("results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_{chr}_bin{{bin_size}}bp.csv",dataset=config['Name'],chr=config['Chromosomes'])
+    output:
+        table="results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_bin{bin_size}bp.csv"
+    shell:
+        """
+        python scripts/make_expression_table.py --chr_tables {input.tables} \
+                                                --output {output.table}
+        """
+
+rule log2_coverage:
+    input:
+        bed="results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bedgraph"
+    output:
+        bed="results/{dataset}/bwa/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bedgraph"
+    resources:
+        tmpdir = lambda wildcards: f"tmpdir/log2_coverage_{wildcards.sample}_{wildcards.strand}_{wildcards.bin_size}.tmp"
+    shell:
+        """
+        awk '{{print $1"\t"$2"\t"$3"\t"log($4+1)/log(2)}}' {input.bed} > {output.bed}
+        """
+
+rule log_coverage_bw:
+    input:
+        bed="results/{dataset}/bwa/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bedgraph",
+        chrom_size="resources/genome/{spec}/chrom.sizes".format(spec=config['Species'])
+    output:
+        bw="results/{dataset}/bwa/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw"
+    params:
+        tmp_sorted="results/{dataset}/bwa/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.sorted.tmp"
+    shell:
+        """
+        sort -k1,1 -k2,2n {input.bed} > {params.tmp_sorted}
+        bedGraphToBigWig {params.tmp_sorted} {input.chrom_size} {output.bw}
+        rm {params.tmp_sorted}
         """
 
 ##----------------------------------##
@@ -339,43 +404,88 @@ rule make_tpm_tables:
         """
         python scripts/make_tpm_table.py --intables {input} --out_mrna {output.mrna}
         """
+
+##------------------------##
+##  STAR : map to genome  ##
+##------------------------##
 #
-#rule countreads:
+#rule star_index:
 #    input:
-#        bam = "results/star/{sample}/Aligned.sortedByCoord.out.bam",
-#        bam_index = "results/star/{sample}/Aligned.sortedByCoord.out.bam.bai",
-#        intron = "resources/genome/{spec}/ensembl.gtf.introns.final.bed".format(spec=config['Species']),
-#        exon = "resources/genome/{spec}/ensembl.gtf.exons.final.bed".format(spec=config['Species'])
+#        genome = "resources/genome/{spec}/genome.fa",
+#        gtf = "resources/genome/{spec}/gene_annotation.gtf"
 #    output:
-#        "results/counting/{sample}/ie_ol.tsv"
+#        genome_dir = directory("resources/genome/{spec}/star_index_{read_length}/")
+#    params:
+#        overhang = config['ReadLength'] - 1,
+#        mem = 160000000000
+#    threads: 24
+#    shell:
+#        """
+#        module load gcc/11.3.0 star
+#        mkdir -p {output.genome_dir}
+#        STAR --runMode genomeGenerate \
+#             --genomeDir {output.genome_dir} \
+#             --genomeFastaFiles {input.genome} \
+#             --sjdbGTFfile {input.gtf} \
+#             --sjdbOverhang {params.overhang} \
+#             --limitGenomeGenerateRAM {params.mem} \
+#             --runThreadN {threads}
+#        """
+#
+#rule star_align:
+#    input:
+#        fq='resources/{dataset}/fastq/{sample}.fastq.gz',
+#        gtf = "resources/genome/{spec}/gene_annotation.gtf".format(spec=config['Species']),
+#        genome_dir = "resources/genome/{spec}/star_index_{read_length}".format(spec=config['Species'],read_length=config['ReadLength'])
+#    output:
+#        bam="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam"
+#    params:
+#        prefix="results/{dataset}/star/{sample}/",
+#        outsamtype = "BAM SortedByCoordinate",
+#        mem = 160000000000,
+#    threads: 24
+#    shell:
+#        """
+#        module load gcc/11.3.0 star
+#        if [ -e {params.prefix}tmp/ ]; then rm -r {params.prefix}tmp/; fi
+#        STAR --runMode alignReads \
+#             --outFileNamePrefix {params.prefix} \
+#             --outTmpDir {params.prefix}tmp/ \
+#             --runDirPerm All_RWX \
+#             --outSAMtype {params.outsamtype} \
+#             --readFilesIn {input.fq} \
+#             --readFilesCommand zcat \
+#             --genomeDir {input.genome_dir} \
+#             --sjdbGTFfile {input.gtf} \
+#             --limitBAMsortRAM {params.mem} \
+#             --runThreadN {threads}
+#        """
+#
+#rule sam_index:
+#    input:
+#        bam="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam"
+#    output:
+#        bam_index="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam.bai"
 #    shell:
 #        """
 #        ml gcc/11.3.0 samtools
-#        perl scripts/Counting_IE_PairedEnd.pl {input.intron} {input.exon} {input.bam} > {output}
+#        samtools index {input}
 #        """
 #
-#rule merge_gene_counts:
+#rule coverage_bedgraph:
 #    input:
-#        expand('results/star/{sample}_ReadsPerGene.out.tab', sample=get_acc_list(config['Name']))
+#        bam="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam",
+#        bam_index="results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam.bai"
 #    output:
-#        'results/star/GeneCount_table.tab'
+#        bg="results/{dataset}/star/{sample}/coverage.bedgraph"
+#    params:
+#        strand = lambda wildcards: '-' if wildcards.strand == "forward" else '+' if wildcards.strand == "reverse" else '',
+#        flag_pe = lambda wildcards: '81' if wildcards.strand == "forward" else '97' if wildcards.strand == "reverse" else '',
+#        flag_se = lambda wildcards: '16' if wildcards.strand == "forward" else '0' if wildcards.strand == "reverse" else ''
 #    shell:
 #        """
-#        outtable={output}
-#        cut -f1 {input[0]} | tail -n+5 > $outtable
-#        for i in {input}; do
-#            paste $outtable <(cut -f2 $i | tail -n+5) > tmp.txt
-#            mv tmp.txt $outtable
-#        done
-#        """
-#
-#rule merged_transcriptome:
-#    input:
-#        expand('results/star/{sample}_Aligned.toTranscriptome.out.bam', sample=get_acc_list(config['Name']))
-#    output:
-#        'results/star/merged_transcriptome.bam'
-#    shell:
-#        """
-#        samtools sort -@ 12 -o {output} {input}
-#        samtools index {output}
+#        if [ ! $(hostname -s) == "haas005" ]; then
+#            ml gcc/11.3.0 samtools bedtools2
+#        fi
+#        samtools view -h {input.bam} | awk '$1 ~ /^@/ || $2 == "{params.flag_pe}" || $2 == "{params.flag_se}"' | samtools view -b | bedtools genomecov -ibam stdin -bg -strand {params.strand} -5 | grep "^\<chr" > {output.bg}
 #        """

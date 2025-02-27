@@ -78,10 +78,10 @@ rule all:
         # map to transcriptome with kallisto
         #
         #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/{sample_name}/abundance.tsv", dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome'], sample_name=get_sample_name(config['Name'])),
-        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
-        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
-        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_premrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
-        expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_mrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/premrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/mrna_tpm_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_premrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
+        #expand("results/{dataset}/kallisto/{spec}_{transcriptome}/promoter_mrna_table.tab",dataset=config['Name'],spec=config['Species'],transcriptome=config['Transcriptome']),
         #
         #expand("results/promoterome/{spec}/promid_transcripts.txt", spec=config['Species']),
         #expand("resources/{dataset}/file_list.txt",dataset=config['Name'])
