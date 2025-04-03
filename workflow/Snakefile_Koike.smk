@@ -43,13 +43,13 @@ rule all:
         #expand("results/{dataset}/bwa/norm_coverage/{sample}_{strand}.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand']),
         #expand("results/{dataset}/bwa/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand'],bin_size=config['BinSize']),
         #expand("results/{dataset}/bwa/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand'],bin_size=config['BinSize']),
-        expand("results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_bin{bin_size}bp.csv",dataset=config['Name'],bin_size=config['BinSize'])
+        #expand("results/{dataset}/bwa/binned_norm_coverage/expression_tables/bin_expression_table_bin{bin_size}bp.csv",dataset=config['Name'],bin_size=config['BinSize'])
         #
         # map to transcriptome with kallisto
         #expand('results/{dataset}/kallisto/mrna_tpm_table.tab',dataset=config['Name']),
         #
         # map to genome with STAR
-        #"results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam".format(dataset=config['Name'],sample=get_SampleNames()),
+        "results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam".format(dataset=config['Name'],sample=get_SampleNames()),
         #"results/Koike_Science_2012/star/liver_CT0/Aligned.sortedByCoord.out.bam",
         #expand("results/{dataset}/star/{sample}/Aligned.sortedByCoord.out.bam.bai",sample=get_SampleNames(),dataset=config['Name']),
 

@@ -12,6 +12,5 @@ dependencies:
     - numpy
     - pandas
     - samtools
-    - matplotlib_venn
     - sra-tools
     - bfast

@@ -8,8 +8,8 @@ Samples = pd.read_csv("resources/"+dataset+"/SRR_Acc_List.txt", sep="\t", header
 
 rule all:
     input:
-        #expand("log/"+dataset+"/fasterq-dump/{sample}.done", sample=Samples),
-        #expand("resources/"+dataset+"/fastq/{sample}.fastq.gz", sample=Samples),
+        expand("log/"+dataset+"/fasterq-dump/{sample}.done", sample=Samples),
+        expand("resources/"+dataset+"/fastq/{sample}.fastq.gz", sample=Samples),
         "resources/"+dataset+"/SRR_per_SampleName.txt"
 
 
