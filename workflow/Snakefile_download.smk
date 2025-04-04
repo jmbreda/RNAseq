@@ -75,3 +75,15 @@ rule srr_sample_table:
                                              --GSMID_SampleName {input.gsm_sample} \\
                                              --outfile {output}
         """
+
+rule rename_srr_sample:
+    input:
+        "resources/"+dataset+"/SRR_per_SampleName.txt"
+    output:
+        "resources/"+dataset+"/SRR_per_SampleName.txt"
+    shell:
+        """
+        python scripts/get_SRR_SampleName.py --SraRunTable {input} \\
+                                             --GSMID_SampleName {input} \\
+                                             --outfile {output}
+        """

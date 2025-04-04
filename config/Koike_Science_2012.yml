@@ -1,6 +1,6 @@
-Name: Koike_Science_2012
-Species: mm10
-Promoterome: '/home/jbreda/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff'
+Name: "Koike_Science_2012"
+Species: "mm10"
+Promoterome: "/home/jbreda/Promoterome/resources/mm10/promoterome_blacklist_annotation.gff"
 GenomeFiles:
     - genome.fa
     - gene_annotation.gtf
@@ -13,6 +13,9 @@ ReadLength: 50
 Strand:
     - forward
     - reverse
+GenomeAligner:
+    - star
+
 bwa:
     MAPQ_min: 10 # Minimum MAPQ score for reads to be considered (Phred-scaled)
     mem: "6G" # Memory for samtools sort

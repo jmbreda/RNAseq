@@ -35,7 +35,14 @@
 
     "star_align" :
     {
-        "time" : "24:00:00",
+        "time" : "02:00:00",
+        "cpus-per-task" : 24,
+        "mem" : "160G"
+    },
+
+    "sam_to_sorted_bam" :
+    {
+        "time" : "02:00:00",
         "cpus-per-task" : 24,
         "mem" : "160G"
     },
@@ -83,5 +90,14 @@
         "time" : "12:00:00",
         "cpus-per-task" : 13,
         "mem" : "80G"
+    },
+
+    "bin_expression_table_merge_chr" :
+    {
+        "name" : "bin_expression_table_merge_chr",
+        "time" : "01:00:00",
+        "cpus-per-task" : 12,
+        "mem" : "80G"
     }
+
 }

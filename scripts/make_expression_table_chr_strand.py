@@ -23,11 +23,11 @@ if __name__ == '__main__':
     args = parse_args()
 
     # Get samples
-    Samples = np.array([b.split('/')[-1].split('_')[1] for b in args.bedgraphs])
+    Samples = np.array([b.split('/')[-1].split('_')[0] for b in args.bedgraphs])
     #assert np.all(Samples == np.sort(Samples)), 'Samples are not sorted'
 
     # get strand
-    strand = np.unique( np.array([b.split('/')[-1].split('_')[2] for b in args.bedgraphs]) )
+    strand = np.unique( np.array([b.split('/')[-1].split('_')[1] for b in args.bedgraphs]) )
     assert len(strand) == 1, 'Multiple strands detected'
     strand = strand[0]
 
