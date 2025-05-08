@@ -75,8 +75,8 @@ rule all:
         #expand("results/{dataset}/{genome_aligner}/norm_coverage/{sample}_{strand}.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand']),
         #expand("results/{dataset}/{genome_aligner}/binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand'],bin_size=config['BinSize']),
         #expand("results/{dataset}/{genome_aligner}/log_binned_norm_coverage/{sample}_{strand}_bin{bin_size}bp.bw",dataset=config['Name'],sample=get_SampleNames(),strand=config['Strand'],bin_size=config['BinSize']),
-        #expand("results/{dataset}/star/binned_norm_coverage/{mapped}/expression_tables/bin_expression_table_bin{bin_size}bp.csv",dataset=config['Name'],mapped=config['star']['Mapped'],bin_size=config['BinSize'])
-        expand("results/{dataset}/star/binned_norm_coverage/Unique_rpm/expression_tables/bin_expression_table_bin10000bp.csv",dataset=config['Name'])
+        expand("results/{dataset}/star/binned_norm_coverage/{mapped}/expression_tables/bin_expression_table_bin{bin_size}bp.csv",dataset=config['Name'],mapped=config['star']['Mapped'],bin_size=config['BinSize'])
+        #expand("results/{dataset}/star/binned_norm_coverage/Unique_rpm/expression_tables/bin_expression_table_bin10000bp.csv",dataset=config['Name'])
 
 
 ##-------------------------------##
