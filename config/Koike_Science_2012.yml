@@ -16,6 +16,10 @@ Strand:
 GenomeAligner:
     - star
 
+star:
+    Mapped:
+        - Unique_rpm
+        - UniqueMultiple_rpm
 bwa:
     MAPQ_min: 10 # Minimum MAPQ score for reads to be considered (Phred-scaled)
     mem: "6G" # Memory for samtools sort

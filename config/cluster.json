@@ -47,6 +47,13 @@
         "mem" : "160G"
     },
 
+    "rpm_coverage" :
+    {
+        "time" : "06:00:00",
+        "cpus-per-task" : 12,
+        "mem" : "72G"
+    },
+
     "kallisto_index" :
     {
         "time" : "24:00:00",

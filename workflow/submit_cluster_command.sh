@@ -10,5 +10,4 @@ snakemake -s workflow/Snakefile_Koike.smk \
                             --ntasks {cluster.ntasks} \
                             --cpus-per-task {cluster.cpus-per-task} \
                             --output {cluster.stdout} \
-                            --error {cluster.stderr}"
-
+                            --error {cluster.stderr}" -n
